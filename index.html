@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="icons/harbaaj-180.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="RoyalPulse"><meta name="theme-color" content="#071a20">
-<title>RoyalPulse</title>
+<title>RoyalPulse 3.4 · Einfach finden</title>
 <style>
 :root{--bg:#071a20;--panel:#102a31;--panel2:#15363e;--line:#2b5057;--mint:#7af0c5;--white:#f3fbf8;--muted:#b8ceca;--yellow:#ffe09a;--red:#ffb9b9}
 *{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top right,#12363a 0%,var(--bg) 48%);color:var(--white);font:16px/1.5 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
@@ -242,7 +242,113 @@ body[data-rp250-theme="blackturquoise"]{--bg:#07191d!important;--panel:#102b30!i
 body[data-rp250-theme="navygold"]{--bg:#09152d!important;--panel:#142543!important;--panel2:#1d3454!important;--line:#51658a!important;--mint:#f2cd75!important;--white:#f5f7ff!important;--muted:#bdc9e1!important;background:#09152d!important}
 body[data-rp250-theme="whitegold"]{--bg:#f8f6f0!important;--panel:#ffffff!important;--panel2:#f0e9da!important;--line:#b7a582!important;--mint:#916b19!important;--white:#27241d!important;--muted:#554b3a!important;background:#f8f6f0!important}
 body[data-rp250-theme="whitegold"] .tabnav,body[data-rp250-theme="whitegold"] .weeknav{background:#f8f6f0!important}body[data-rp250-theme="whitegold"] .tabnav button{color:#27241d;background:#e9e2d3}body[data-rp250-theme="whitegold"] .tabnav button.active{background:#e0bc6a;color:#292016}
+</style><style>
+
+</style><style id="rp310Design">
+:root{--rp310-edge:rgba(156,230,207,.16)}
+#rp310Hero{padding:24px;border-radius:24px;margin:0 0 18px;background:linear-gradient(120deg,#16483f 0%,#0c2831 60%,#182a45 100%);border:1px solid var(--rp310-edge);box-shadow:0 16px 40px #0003}
+#rp310Hero .eyebrow{font-size:.72rem;letter-spacing:.15em;font-weight:850;color:#a9e6cf;text-transform:uppercase}
+#rp310Hero h2{margin:8px 0;font-size:clamp(1.5rem,4vw,2.4rem);line-height:1.18;color:#fff}
+#rp310Hero p{margin:0;color:#c5e0dc;max-width:65ch}
+#rp310Tiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:18px 0 23px}
+.rp310Tile{min-width:0;display:flex;align-items:center;gap:12px;text-align:left;cursor:pointer;padding:19px 15px;min-height:105px;border-radius:19px;background:var(--panel);border:1px solid var(--line);color:var(--white);box-shadow:0 8px 22px #0002;transition:transform .15s,border-color .15s}
+.rp310Tile:hover,.rp310Tile:focus-visible{transform:translateY(-2px);border-color:var(--mint);outline-offset:3px}
+.rp310Tile .ico{font-size:2rem;flex:0 0 43px;text-align:center}
+.rp310Tile strong{display:block;font-size:1.05rem;margin-bottom:5px}
+.rp310Tile small{display:block;color:var(--muted);font-size:.78rem;line-height:1.4}
+#tab-overview>.rp-overview-intro{display:none}
+.tabnav{scroll-padding-inline:12px}
+.tabnav button:focus-visible{outline:3px solid var(--mint);outline-offset:2px}
+@media(min-width:850px){#rp310Tiles{grid-template-columns:repeat(4,minmax(0,1fr))}.rp310Tile{flex-direction:column;align-items:flex-start}}
+@media(max-width:440px){#rp310Tiles{gap:9px}.rp310Tile{padding:13px 10px;gap:6px;min-height:104px}.rp310Tile .ico{font-size:1.5rem;flex-basis:28px}.rp310Tile strong{font-size:.9rem}.rp310Tile small{font-size:.7rem}}
+@media(prefers-reduced-motion:reduce){.rp310Tile{transition:none}}
+</style><style id="rp320Design">
+#rp310Hero{padding:18px 20px;margin-bottom:16px;border-radius:18px;box-shadow:none}
+#rp310Hero h2{font-size:clamp(1.35rem,3vw,1.9rem)}
+#rp310Tiles{margin:8px 0 14px;gap:10px;grid-template-columns:repeat(2,minmax(0,1fr))}
+.rp320SectionLabel{font-size:.78rem;letter-spacing:.1em;font-weight:800;color:var(--mint);display:flex;justify-content:space-between;align-items:center;margin-top:14px}
+.rp320SectionLabel span{letter-spacing:0;color:var(--muted);font-weight:500}
+#rp310Tiles .rp310Tile{min-height:88px;padding:15px;border-radius:15px;flex-direction:row;align-items:center}
+#rp310Tiles .rp310Tile .ico{font-size:1.65rem;flex:0 0 36px}
+#rp310Tiles .rp310Tile strong{font-size:1rem}
+.rp320More{margin:8px 0 16px;border:1px solid var(--line);background:var(--panel);border-radius:14px;overflow:hidden}
+.rp320More summary{cursor:pointer;padding:15px 17px;font-weight:750;color:var(--white);display:flex;justify-content:space-between;list-style:none}
+.rp320More summary::-webkit-details-marker{display:none}
+.rp320More[open] summary{border-bottom:1px solid var(--line)}
+.rp320MoreGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;padding:12px}
+.rp320MoreGrid .rp310Tile{min-height:52px;padding:12px;display:flex;flex-direction:row;align-items:center;gap:10px;font-size:1.2rem;border-radius:12px}
+.rp320MoreGrid .rp310Tile strong{font-size:.92rem;margin:0}
+#tab-overview>.rp-overview-intro,#tab-overview>.welcome{display:none}
+#rp320Extra{margin:12px 0 22px;border:1px solid var(--line);border-radius:15px;background:var(--panel)}
+#rp320Extra summary{cursor:pointer;padding:15px 17px;font-weight:750}
+#rp320Extra .heroGrid{padding:12px}
+@media(min-width:800px){#rp310Tiles{grid-template-columns:repeat(4,minmax(0,1fr))}.rp320MoreGrid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:440px){#rp310Tiles .rp310Tile{padding:12px 8px;gap:6px}#rp310Tiles .rp310Tile .ico{flex-basis:26px;font-size:1.35rem}#rp310Tiles .rp310Tile small{font-size:.66rem}}
+</style><style id="rp330Style">.rp330Welcome{background:linear-gradient(130deg,#143d42,#0d222c);border:1px solid #527879;border-radius:22px;padding:24px;margin:16px 0 22px}.rp330Welcome h2{font-size:clamp(24px,4vw,36px);margin:9px 0}.rp330Welcome p{opacity:.9;margin:0}.rp330Label{font-size:13px;font-weight:900;letter-spacing:.09em;margin:25px 0 12px;display:flex;justify-content:space-between;gap:12px}.rp330Label span{font-size:12px;opacity:.7;font-weight:500;letter-spacing:0}.rp330Grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.rp330Card{display:flex;align-items:center;gap:13px;text-align:left;padding:18px 15px;min-height:91px;border-radius:17px;border:1px solid rgba(158,209,199,.35);background:rgba(17,51,58,.95);color:#fff;cursor:pointer;width:100%;font:inherit}.rp330Card:hover,.rp330Card:focus-visible{outline:2px solid #8de3d1;background:#214d51}.rp330Icon{font-size:30px;flex:none}.rp330Copy{flex:1;min-width:0}.rp330Copy strong{display:block;font-size:17px;margin-bottom:5px}.rp330Copy small{display:block;font-size:12px;line-height:1.5;color:#d2e7e5}.rp330Arrow{font-size:22px;color:#a7e3d7}.rp330Help,.rp330Old{border:1px solid rgba(158,209,199,.3);border-radius:14px;margin-top:20px;padding:15px}.rp330Help summary,.rp330Old summary{cursor:pointer;font-weight:750}.rp330Help p{line-height:1.8}.rp330Old>.panel{margin-top:16px}#tab-overview #rp310Tiles,#tab-overview #rp320More,#tab-overview #rp310Hero{display:none!important}@media(max-width:600px){.rp330Grid{grid-template-columns:1fr}.rp330Card{min-height:78px}.rp330Welcome{padding:18px}} </style><style id="rp340Style">
+/* RoyalPulse 3.4: Einfache, gut erkennbare Navigation */
+.tabnav{gap:8px;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;padding:10px 4px 14px;top:0}
+.tabnav::-webkit-scrollbar{display:none}
+.tabnav button{flex:0 0 auto;min-width:0;white-space:nowrap;border-radius:15px;padding:12px 16px}
+.tabnav button[data-tab="achievements"],.tabnav button[data-tab="goals"],.tabnav button[data-tab="realcalendar"],.tabnav button[data-tab="rewards"],.tabnav button[data-tab="holidays"]{display:none}
+.rp330Welcome{padding:20px 22px!important}
+.rp330Welcome h2{font-size:clamp(1.5rem,4vw,2.2rem)!important}
+.rp330Grid{gap:12px!important}
+.rp330Card{min-height:104px!important;transition:transform .15s ease, border-color .15s ease;outline-offset:3px}
+.rp330Card:hover{transform:translateY(-2px);border-color:var(--mint)!important}
+.rp330Card:focus-visible,.tabnav button:focus-visible{outline:3px solid var(--mint)}
+.rp330Copy small{line-height:1.4!important}
+.rp340SearchLabel{display:block;margin:20px 0 7px;font-weight:800;color:var(--white)}
+.rp340Search{display:block;width:100%;max-width:600px;padding:14px 16px;border:2px solid var(--line);border-radius:14px;background:#081e24;color:var(--white);font-size:16px}
+.rp340Search:focus{outline:2px solid var(--mint);outline-offset:2px}
+.rp340Empty{padding:15px;border:1px dashed var(--line);border-radius:12px}
+.rp340Back{display:inline-flex;align-items:center;gap:8px;margin:4px 0 18px;padding:10px 14px;border:1px solid var(--line);border-radius:12px;background:var(--panel2);color:var(--white);font-weight:700;cursor:pointer}
+.rp340Back:focus-visible{outline:3px solid var(--mint)}
+@media(max-width:680px){header{padding-top:18px!important;padding-bottom:10px!important}header h1{font-size:clamp(1.9rem,8vw,3rem)!important;margin:12px 0 8px!important}.tabnav{position:sticky;top:0;z-index:20;background:#071a20fa}.tabnav button{padding:11px 13px}.rp330Grid{grid-template-columns:1fr!important}.rp330Card{min-height:88px!important}.rp330Welcome{padding:16px!important}}
+@media(prefers-reduced-motion:reduce){.rp330Card{transition:none}.rp330Card:hover{transform:none}}
+</style><style id="rp360Style">
+:root{--rp36-border:color-mix(in srgb,var(--mint) 23%,transparent)}
+#rp360Home{margin:0 0 22px;font-family:inherit}
+#rp360Home .rp36Intro{padding:26px 22px;border-radius:26px;background:linear-gradient(135deg,#194d49,#112c35 75%);border:1px solid #56847d;margin-bottom:16px}
+#rp360Home .rp36Intro small{color:#a6e8d2;font-weight:850;letter-spacing:.1em}#rp360Home h2{font-size:clamp(1.65rem,4vw,2.5rem);margin:9px 0}#rp360Home p{color:#c5dcd6;line-height:1.55;margin:6px 0}
+#rp360Home .rp36Heading{font-size:1.1rem;margin:22px 0 11px}#rp360Home .rp36Grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+#rp360Home .rp36Tile{appearance:none;display:flex;flex-direction:column;align-items:flex-start;text-align:left;gap:6px;min-height:147px;background:#12313a;border:1px solid #476b70;color:var(--white);border-radius:21px;padding:19px;transition:transform .15s,border-color .15s;box-shadow:0 7px 22px #0002}
+#rp360Home .rp36Tile:hover,#rp360Home .rp36Tile:focus-visible{transform:translateY(-2px);border-color:var(--mint);outline-offset:3px}
+#rp360Home .rp36Tile .rp36Emoji{font-size:28px}#rp360Home .rp36Tile strong{font-size:1.09rem}#rp360Home .rp36Tile span:last-child{font-size:.84rem;font-weight:500;color:#b9d4d0;line-height:1.4}
+#rp360Home .rp36Tile.rp36Main{background:linear-gradient(145deg,#21564f,#16383e);border-color:#5b9582}
+#rp360Home .rp36Secondary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+#rp360Home .rp36Secondary .rp36Tile{min-height:126px;padding:14px}
+#rp360Home .rp36Details{margin-top:19px;border:1px solid #4c7376;border-radius:18px;overflow:hidden;background:#102b32}
+#rp360Home .rp36Details summary{padding:16px 19px;font-weight:850;cursor:pointer;list-style:none}#rp360Home .rp36Details summary::-webkit-details-marker{display:none}#rp360Home .rp36Details summary:after{content:'＋';float:right}#rp360Home .rp36Details[open] summary:after{content:'−'}
+#rp360Legacy{padding:0 10px 10px}#rp360Legacy>.rp330Welcome{display:none!important}
+@media(min-width:820px){#rp360Home .rp36Grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(max-width:600px){#rp360Home .rp36Secondary{grid-template-columns:repeat(2,minmax(0,1fr))}#rp360Home .rp36Tile{min-height:137px;padding:15px}#rp360Home .rp36Intro{padding:20px 17px}}
+@media(prefers-reduced-motion:reduce){#rp360Home .rp36Tile{transition:none}}
 </style></head>
+<style>
+/* RoyalPulse 3.0: UI-only Klar-Modus. Bestehende IDs und Funktionen bleiben erhalten. */
+:root{--radius:20px}
+body{background:var(--bg)!important;line-height:1.55}
+header{max-width:1160px;margin:20px auto 0!important;padding:28px 28px 22px!important;border:1px solid var(--line);border-radius:24px;background:linear-gradient(115deg,var(--panel),var(--bg));box-shadow:0 12px 32px #0002}
+header h1{font-size:clamp(1.8rem,4vw,3rem)!important;line-height:1.13!important;margin:12px 0!important}
+header .lead{max-width:720px;font-size:.96rem;line-height:1.6}
+main{max-width:1160px!important;margin:0 auto!important;padding:14px 18px 65px!important}
+.tabnav{position:sticky;top:0;z-index:30;display:flex!important;flex-wrap:nowrap!important;overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:thin;gap:9px;padding:13px 80px 13px 12px!important;margin:8px 0 18px;border:1px solid var(--line);border-radius:18px;background:var(--bg)!important;box-shadow:0 7px 20px #0002}
+.tabnav button{flex:0 0 auto!important;white-space:nowrap;padding:11px 15px!important;min-height:45px;border-radius:12px!important;font-weight:750;font-size:.92rem!important}
+.tabnav button.active{background:var(--mint)!important;color:#071a20!important;border-color:transparent!important;box-shadow:0 4px 12px #0002}
+.tabpage{min-width:0}.panel{border-radius:20px!important;padding:clamp(16px,2.4vw,25px)!important;box-shadow:0 7px 24px #0001;border:1px solid var(--line)!important}
+.panel h2{font-size:clamp(1.25rem,2.2vw,1.7rem);line-height:1.25;margin-top:4px}
+.panel h3{line-height:1.3}.panel p{line-height:1.65}
+.quicklinks{display:flex;flex-wrap:wrap;gap:10px;margin-top:17px}
+.quicklinks button,.actions button{min-height:44px;border-radius:12px}
+.stats{gap:10px}.stat{border-radius:14px!important;padding:13px!important}
+input,select,textarea{max-width:100%;border-radius:11px!important}
+button{cursor:pointer;transition:filter .15s,transform .15s}button:hover{filter:brightness(1.08)}button:focus-visible,a:focus-visible{outline:3px solid var(--mint);outline-offset:3px}
+.heroGrid,.extra-grid{gap:15px!important}
+.rp-overview-intro{display:flex;align-items:center;justify-content:space-between;gap:15px;flex-wrap:wrap;padding:17px 20px;margin-bottom:14px;border:1px solid var(--line);border-radius:18px;background:var(--panel2)}
+.rp-overview-intro strong{font-size:1.08rem}.rp-overview-intro p{margin:4px 0 0;color:var(--muted);font-size:.91rem}
+.rp-overview-intro a{color:var(--mint);font-weight:700}
+@media(max-width:650px){header{margin:9px 10px 0!important;padding:20px 17px!important;border-radius:19px}header .lead{font-size:.88rem}main{padding:10px 10px 60px!important}.tabnav{padding:9px 62px 9px 9px!important;border-radius:14px}.tabnav button{font-size:.84rem!important;padding:9px 12px!important}.panel{padding:16px!important;border-radius:16px!important}.stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.rp-overview-intro{padding:14px}}
+</style>
 <body><div id="appLock" hidden><div class="lock-inner"><div style="font-size:3rem">👑</div><h2>RoyalPulse</h2><p>App gesperrt. Gib deinen PIN ein.</p><input id="unlockPin" type="password" inputmode="numeric" maxlength="8" placeholder="PIN" aria-label="App-PIN"><button class="primary" id="unlockBtn">Entsperren</button><p id="unlockFeedback" role="alert"></p></div></div><div id="certPrint"></div><script>
 /* Standalone PIN controller: runs even when other app modules have a runtime error.
    This is a UI lock, not encryption. Never sends the PIN anywhere. */
@@ -318,13 +424,13 @@ document.addEventListener('visibilitychange',()=>{if(document.visibilityState===
 <header>
 <div class="brand"><span class="logo">✓</span> HARBAAJ PERSONAL FITNESS DASHBOARD</div>
 <h1>HARBAAJ FITNESS<br><em class="sparkle">LEGEND.</em></h1>
-<p class="lead">Willkommen, Harbaaj! Deine übersichtlich sortierte Fitness-Zentrale, Erfolgen, eigenen Zielen, Check-in-Journal und anklickbarem Trainingskalender mit ausgewählten Oliver-Sjöström-Videos. Große Schaltflächen, Wochenübersicht, Tagesaufgaben und Sicherung deiner Häkchen.</p>
+<p class="lead">Willkommen, Harbaaj! Deine übersichtlich sortierte Fitness-Zentrale, Erfolgen, eigenen Zielen, anklickbarem Trainingskalender mit ausgewählten Oliver-Sjöström-Videos. Große Schaltflächen, Wochenübersicht, Tagesaufgaben und Sicherung deiner Häkchen.</p>
 <div style="font-size:12px;color:#b8ceca;letter-spacing:.04em;margin-top:12px">erstellt von Harbaaj</div>
 </header>
 <main>
-<nav class="tabnav" aria-label="Dashboard Kategorien"><button type="button" class="active" data-tab="overview">🏠 Startseite</button><button type="button" data-tab="calendar">📅 Trainingsplan</button><button type="button" data-tab="achievements">🏆 Erfolge</button><button type="button" data-tab="analytics">📊 Statistiken</button><button type="button" data-tab="goals">🎯 Meine Ziele</button><button type="button" data-tab="checkin">📓 Tagebuch</button> <button type="button" data-tab="realcalendar">🗓️ Kalender</button><button type="button" data-tab="videos">🎬 Videothek</button><button type="button" data-tab="rewards">🎁 Belohnungen</button><button type="button" data-tab="holidays">🏖️ Ferien</button><button type="button" data-tab="yearreview">📆 Jahresrückblick</button></nav><button id="coinShortcut" type="button" aria-label="LEGEND-Münzen anzeigen" title="Münzbereich öffnen">🪙 <span id="coinShortcutCount">0</span></button><button id="settingsGear" type="button" aria-label="Einstellungen öffnen" title="Einstellungen öffnen">⚙️</button>
-<div class="tabpage" id="tab-overview">
-<section class="panel welcome"><div class="kicker">DEIN PERSÖNLICHER BEREICH</div><h2>Willkommen zurück, Harbaaj! 👋</h2><p class="tip">Dein Weg durch 365 Tage – übersichtlich, in deinem Tempo und mit Platz für Erholung.</p><div class="quicklinks"><button class="soft" type="button" data-jump="calendar">📅 Zum Trainingsplan</button><button class="soft" type="button" data-jump="achievements">🏆 Meine Erfolge</button><button class="soft" type="button" data-jump="goals">🎯 Meine Ziele</button></div></section><div class="heroGrid">
+<nav class="tabnav" aria-label="Dashboard Kategorien"><button type="button" class="active" data-tab="overview">🏠 Startseite</button><button type="button" data-tab="calendar">📅 Trainingsplan</button><button type="button" data-tab="achievements">🏆 Erfolge</button><button type="button" data-tab="analytics">📊 Statistiken</button><button type="button" data-tab="goals">🎯 Meine Ziele</button> <button type="button" data-tab="realcalendar">🗓️ Kalender</button><button type="button" data-tab="rewards">🎁 Belohnungen</button><button type="button" data-tab="holidays">🏖️ Ferien</button></nav><button id="coinShortcut" type="button" aria-label="LEGEND-Münzen anzeigen" title="Münzbereich öffnen">🪙 <span id="coinShortcutCount">0</span></button><button id="settingsGear" type="button" aria-label="Einstellungen öffnen" title="Einstellungen öffnen">⚙️</button>
+
+<div class="tabpage" id="tab-overview"><section class="rp330Welcome"><div class="eyebrow">ROYALPULSE · STARTSEITE</div><h2>Alles auf einen Blick</h2><p>Suche eine Funktion oder wähle einen Bereich aus. Jeder Bereich erklärt sich selbst.</p><label class="rp340SearchLabel" for="rp340Search">🔎 Funktion suchen</label><input id="rp340Search" class="rp340Search" type="search" placeholder="z. B. Schritte, Training, Kalender …" autocomplete="off"><p id="rp340SearchEmpty" class="rp340Empty" hidden>Keine Funktion gefunden. Versuche ein anderes Wort.</p></section><div class="rp330Label">⭐ HÄUFIG GENUTZT <span>Direkt öffnen</span></div><div class="rp330Grid"><button type="button" class="rp330Card" data-rp310-tab="calendar"><span class="rp330Icon">💪</span><span class="rp330Copy"><strong>Training</strong><small>365-Tage-Plan, Workouts und Videos</small></span><span class="rp330Arrow" aria-hidden="true">→</span></button><button type="button" class="rp330Card" data-rp310-tab="steps"><span class="rp330Icon">👟</span><span class="rp330Copy"><strong>Schritte</strong><small>Schritte eintragen und Kilometer ansehen</small></span><span class="rp330Arrow" aria-hidden="true">→</span></button><button type="button" class="rp330Card" data-rp310-tab="water"><span class="rp330Icon">💧</span><span class="rp330Copy"><strong>Wasser</strong><small>Getränke und Trinkmenge eintragen</small></span><span class="rp330Arrow" aria-hidden="true">→</span></button><button type="button" class="rp330Card" data-rp310-tab="analytics"><span class="rp330Icon">📊</span><span class="rp330Copy"><strong>Statistiken</strong><small>Training und Schritte im Diagramm ansehen</small></span><span class="rp330Arrow" aria-hidden="true">→</span></button></div><div class="rp330Label">🧭 ALLE WEITEREN BEREICHE <span>Einfach auswählen</span></div><div class="rp330Grid"><button type="button" class="rp330Card" data-rp310-tab="achievements"><span class="rp330Icon">🏆</span><span class="rp330Copy"><strong>Erfolge</strong><small>Abzeichen und erreichte Meilensteine</small></span><span class="rp330Arrow" aria-hidden="true">→</span></button><button type="button" class="rp330Card" data-rp310-tab="goals"><span class="rp330Icon">🎯</span><span class="rp330Copy"><strong>Ziele</strong><small>Eigene Ziele und Tagesaufgaben</small></span><span class="rp330Arrow" aria-hidden="true">→</span></button><button type="button" class="rp330Card" data-rp310-tab="realcalendar"><span class="rp330Icon">🗓️</span><span class="rp330Copy"><strong>Kalender</strong><small>Trainingstage nach Datum suchen</small></span><span class="rp330Arrow" aria-hidden="true">→</span></button><button type="button" class="rp330Card" data-rp310-tab="rewards"><span class="rp330Icon">🎁</span><span class="rp330Copy"><strong>Belohnungen</strong><small>Motivationskarten und Münzen</small></span><span class="rp330Arrow" aria-hidden="true">→</span></button><button type="button" class="rp330Card" data-rp310-tab="holidays"><span class="rp330Icon">🏖️</span><span class="rp330Copy"><strong>Ferien</strong><small>Freie Tage markieren</small></span><span class="rp330Arrow" aria-hidden="true">→</span></button></div><details class="rp330Help"><summary>❓ Wie funktioniert RoyalPulse?</summary><p><b>1.</b> Wähle oben eine Kachel. <b>2.</b> Trage etwas ein oder öffne deinen Trainingsplan. <b>3.</b> Kehre über „🏠 Startseite“ hierher zurück. <b>⚙️</b> Über das Zahnrad findest du Einstellungen und Sicherungen.</p></details><details class="rp330Old"><summary>📋 Weitere Infos zur Startseite anzeigen</summary><section class="panel welcome"><div class="kicker">DEIN PERSÖNLICHER BEREICH</div><h2>Willkommen zurück, Harbaaj! 👋</h2><p class="tip">Dein Weg durch 365 Tage – übersichtlich, in deinem Tempo und mit Platz für Erholung.</p><div class="quicklinks"><button class="soft" type="button" data-jump="calendar">📅 Zum Trainingsplan</button><button class="soft" type="button" data-jump="achievements">🏆 Meine Erfolge</button><button class="soft" type="button" data-jump="goals">🎯 Meine Ziele</button></div></section><div class="heroGrid">
 <section class="panel">
 <div class="bigrow"><div><div class="kicker">Dein Gesamtfortschritt</div><div class="percent" id="pct">0%</div></div><div style="font-size:2.2rem">🏆</div></div>
 <div class="bar"><span id="bar"></span></div>
@@ -342,8 +448,8 @@ document.addEventListener('visibilitychange',()=>{if(document.visibilityState===
 <label class="habit"><input type="checkbox" id="habit3"> <span>Ich plane genug Schlaf und Erholung ein.</span></label>
 <p class="tip">Die Mini-Checkliste wird täglich neu angezeigt und ist freiwillig.</p>
 </section></div>
-</div><div class="tabpage" id="tab-analytics" hidden>
-<section class="panel rp-analytics-head"><div class="kicker">ROYALPULSE INSIGHTS · 2.5.2</div><h2>📊 Deine Trainingsstatistiken</h2><p class="tip">Deine Fortschritte im eigenen Tempo. Die Auswertung nutzt ausschließlich die auf diesem Gerät gespeicherten Trainings-Häkchen.</p><div class="rp-stat-cards"><div><strong id="rpTotal">0</strong><span>Abgeschlossene Tage</span></div><div><strong id="rpPercent">0 %</strong><span>365-Tage-Fortschritt</span></div><div><strong id="rpWeeks">0</strong><span>Vollständige Wochen</span></div><div><strong id="rpRest">365</strong><span>Noch offene Tage</span></div></div></section>
+</details></div><div class="tabpage" id="tab-analytics" hidden>
+<section class="panel rp-analytics-head"><div class="kicker">ROYALPULSE INSIGHTS · 2.8.0</div><h2>📊 Deine Trainingsstatistiken</h2><p class="tip">Deine Fortschritte im eigenen Tempo. Die Auswertung nutzt ausschließlich die auf diesem Gerät gespeicherten Trainings-Häkchen.</p><div class="rp-stat-cards"><div><strong id="rpTotal">0</strong><span>Abgeschlossene Tage</span></div><div><strong id="rpPercent">0 %</strong><span>365-Tage-Fortschritt</span></div><div><strong id="rpWeeks">0</strong><span>Vollständige Wochen</span></div><div><strong id="rpRest">365</strong><span>Noch offene Tage</span></div></div></section>
 <section class="panel"><div class="rp-chart-heading"><div><div class="kicker">WOCHENÜBERSICHT</div><h2>📈 Fortschritt nach Wochen</h2></div><span class="rp-chart-note">Abgeschlossene Tage je 7-Tage-Block</span></div><div id="rpWeeklyChart" class="rp-week-chart" role="img" aria-label="Balkendiagramm: Abgeschlossene Trainingstage je Woche"></div><p class="tip">Die Balken zeigen deine Trainings-Häkchen im 365-Tage-Plan, nicht automatisch erfasste Aktivität.</p></section>
 <section class="panel"><div class="kicker">DEIN JAHR</div><h2>✨ 12 Etappen im Überblick</h2><div id="rpStages" class="rp-stages"></div><p class="tip">Jede Etappe umfasst 30 Trainingstage; die letzte Etappe umfasst 35 Tage. Es sind keine Kalendermonate.</p></section>
 <section class="panel"><div class="kicker">DEIN WEG</div><h2>👑 Kleine Schritte zählen</h2><p id="rpEncouragement" class="tip">Deine Auswertung wird geladen.</p><div class="actions"><button type="button" class="soft" id="rpRefreshStats">↻ Statistiken aktualisieren</button><button type="button" class="soft" data-jump="calendar">📅 Zum Trainingsplan</button></div></section>
@@ -351,15 +457,15 @@ document.addEventListener('visibilitychange',()=>{if(document.visibilityState===
 <div class="tabpage" id="tab-achievements" hidden><section class="panel" id="legendRanks"><div class="kicker">LEGEND RANGSYSTEM</div><h2>👑 Dein Profil-Level & Titel</h2><div id="legendRankContent"></div></section><section class="panel achievements" id="erfolge"><div class="sectionhead"><div><div class="kicker">Deine persönliche Reise</div><h2>🏆 Erfolge & Meilensteine</h2></div><button class="soft small" id="jumpCalendar">📅 Zum Kalender</button></div><div class="achievementTop"><div class="stat"><b id="xpTotal">0</b><span>XP gesammelt</span></div><div class="stat"><b id="levelValue">1</b><span>Dein Level</span></div><div class="stat"><b id="badgeTotal">0/24</b><span>Abzeichen</span></div></div><div class="motivation"><strong id="levelLabel">Level 1</strong><div class="levelTrack"><div id="levelBar" style="width:0%"></div></div><span class="milestone" id="nextBadge">Dein erster Erfolg wartet!</span></div><div class="achievementGrid" id="achievementGrid"></div><p class="tip">Du schaltest Abzeichen durch abgehakte Tage frei. Erholung zählt genauso wie Training. Punkte und Level sind nur spielerische Motivation, kein Maßstab für deinen Wert oder deine Fitness.</p></section></div><div class="tabpage" id="tab-calendar" hidden>
 <section class="panel"><div class="kicker">DEIN WOCHENRÜCKBLICK</div><h2>📊 Wochenberichte</h2><div class="actions"><button id="v23PrevWeek" class="soft" type="button">← Vorherige Woche</button><button id="v23NextWeek" class="soft" type="button">Nächste Woche →</button></div><div id="v23WeekReport"></div></section>
 <section class="panel"><div class="kicker">FAVORITEN</div><h2>⭐ Trainings-Favoriten</h2><p class="tip">Speichere die Video-Links deiner Lieblingstage. Es werden keine Videos heruntergeladen.</p><div id="v23FavoriteList"></div></section>
-<section class="panel" id="legendYearCalendar"><div class="kicker">DEIN JAHR AUF EINEN BLICK</div><h2>🗓️ 365-Tage-Jahreskalender</h2><p class="tip">365 Tage ab deinem Startdatum. Grüne Tage sind abgehakt, Ruhetage zählen genauso.</p><p class="tip">Tippe auf einen Kalendertag, um ihn abzuhaken oder die Markierung zu entfernen.</p><div id="legendYearMonths" class="legendYearMonths"></div></section><div class="panel"><div class="kicker">365 TAGE · 53 WOCHEN</div><h2>📅 Harbaaj Trainingsplan</h2><p class="tip">Wähle eine Woche aus und hake die Tage ab. Ruhetage sind genauso wichtig.</p></div><div class="weeknav" id="weeks"></div><div class="days" id="days"></div></div>
+<div class="panel"><div class="kicker">365 TAGE · 53 WOCHEN</div><h2>📅 Harbaaj Trainingsplan</h2><p class="tip">Wähle eine Woche aus und hake die Tage ab. Ruhetage sind genauso wichtig.</p></div><div class="weeknav" id="weeks"></div><div class="days" id="days"></div></div>
 <div class="tabpage" id="tab-goals" hidden>
 <section class="panel"><div class="kicker">JEDER TAG EINE NEUE MISSION</div><h2>🌟 365 tägliche Ziele</h2><p class="tip">Wie beim Trainingsplan hat jeder Tag seine eigenen, wechselnden Ziele. Du kannst sie einzeln abhaken – auch ein Ruhetag ist wertvoll.</p><div class="weeknav" id="goalWeeks"></div><div class="goalgrid" id="dailyGoals"></div></section>
 <section class="panel" style="display:none" aria-hidden="true"><div class="kicker">DEINE EIGENE MISSION</div><h2>🎯 Meine Ziele & persönlichen Siege</h2><p class="tip">Wähle Ziele, die dir guttun. Kein Leistungsdruck – Pausen und Erholung gehören dazu.</p><div class="goalgrid" id="goalGrid"></div><div class="actions"><button class="primary" id="addGoal">＋ Eigenes Ziel hinzufügen</button></div></section>
 <section class="panel"><h2>📈 Deine Monatsübersicht</h2><div class="monthgrid" id="monthGrid"></div><p class="tip">Diese Anzeige zählt abgeschlossene Tage, nicht verbrannte Kalorien oder Körpermaße.</p></section>
 </div>
 
-<div class="tabpage" id="tab-realcalendar" hidden><section class="panel"><div class="kicker">365 TAGE MIT DATUM</div><h2>🗓️ Dein echter Kalender</h2><p class="tip">Das Startdatum legst du unter ⚙️ Einstellungen fest. Tippe auf einen Tag, um das Training zu öffnen.</p><div class="actions"><button class="soft" id="prevCal">← Vorheriger Monat</button><strong id="calTitle"></strong><button class="soft" id="nextCal">Nächster Monat →</button></div><div class="calendar-grid" id="realCal"></div><p class="tip">Grün = abgehakt. Ruhetage zählen ebenfalls.</p></section></div>
-<div class="tabpage" id="tab-videos" hidden><section class="panel"><div class="kicker">OLIVER SJÖSTRÖM</div><h2>🎬 Deine Videothek</h2><p class="tip">Drei vorhandene Video-Direktlinks und weitere YouTube-Kanalsuchen. Die Suchlinks führen zu Ergebnissen auf Olivers Kanal und sind keine garantierten Einzelvideos. Passe jede Einheit an dein Wohlbefinden an.</p><div id="videoLibrary" class="extra-grid"></div></section></div>
+<div class="tabpage" id="tab-realcalendar" hidden><section class="panel"><div class="kicker">365 TAGE MIT DATUM</div><h2>🗓️ Dein echter Kalender</h2><p class="tip">Das Startdatum legst du unter ⚙️ Einstellungen fest. Tippe auf einen Tag, um das Training zu öffnen.</p><div class="actions"><button class="soft" id="prevCal">← Vorheriger Monat</button><strong id="calTitle"></strong><button class="soft" id="nextCal">Nächster Monat →</button></div><div class="calendar-grid" id="realCal"></div><p class="tip">Grün = abgehakt. Ruhetage zählen ebenfalls.</p></section><section class="panel"><div class="kicker">DEIN RÜCKBLICK</div><h2>📆 LEGEND Jahresrückblick</h2><p class="tip">Dein persönlicher Rückblick auf abgeschlossene Trainingstage, Erholung und Ziele – ohne Körpervergleiche.</p><label>Jahr <select id="reviewYear"></select></label><div id="yearReviewContent" class="extra-grid private-content"></div><div class="actions"><button class="primary" id="yearPrint">🖨️ Jahresrückblick drucken / PDF</button><button class="primary" id="ultraCertButton">🏅 Jahresurkunde als PDF</button></div><p class="tip">Die Urkunde lässt sich im Druckdialog als PDF sichern. Sie zeigt deine markierten Tage, keine Körpermesswerte.</p></section></div>
+<div class="tabpage" id="tab-videos" hidden aria-hidden="true" style="display:none!important"><section class="panel"><div class="kicker">OLIVER SJÖSTRÖM</div><h2>🎬 Deine Videothek</h2><p class="tip">Drei vorhandene Video-Direktlinks und weitere YouTube-Kanalsuchen. Die Suchlinks führen zu Ergebnissen auf Olivers Kanal und sind keine garantierten Einzelvideos. Passe jede Einheit an dein Wohlbefinden an.</p><div id="videoLibrary" class="extra-grid"></div></section></div>
 <div class="tabpage" id="tab-coins" hidden><section class="panel"><div class="kicker">DEIN LEGEND-MÜNZBEREICH</div><h2>🪙 Meine Münzen</h2><p class="tip">Dein Münz-Tresor, dein Rang und dein Fortschritt. Die Extras kannst du unter 🎁 Belohnungen kaufen.</p><button type="button" class="soft" data-jump="rewards">🛒 Zum LEGEND-SHOP</button></section></div>
 <div class="tabpage" id="tab-profile" hidden><section class="panel"><div class="kicker">LEGEND PROFIL</div><h2>👑 Harbaaj</h2><p class="tip">erstellt von Harbaaj</p><div class="profile-photo-wrap"><img id="legendPhoto" alt="Dein optionales Profilbild" hidden><div><label class="button soft" for="profileUpload">📷 Profilbild auswählen</label><input type="file" id="profileUpload" accept="image/png,image/jpeg,image/webp" hidden><button class="soft small" id="removePhoto">Bild entfernen</button><p class="tip">Das Bild bleibt lokal in diesem Browser. Verwende keine sensiblen Fotos.</p></div></div><div class="extra-grid private-content" id="profileCards"></div><p class="tip">Erfolge und Level sind spielerische Motivation, kein Maßstab für deinen Wert oder deine Gesundheit.</p></section></div>
 
@@ -368,14 +474,16 @@ document.addEventListener('visibilitychange',()=>{if(document.visibilityState===
 
 
 <div class="tabpage" id="tab-holidays" hidden><section class="panel"><div class="kicker">DEIN KALENDER</div><h2>🏖️ Ferien & freie Tage</h2><p class="tip">Trage persönliche Ferientage oder freie Tage ein. Die Einträge sind nur Markierungen und verändern den Trainingsplan nicht automatisch.</p><div class="setting-row"><label>Datum <input type="date" id="holidayDate"></label><label>Bezeichnung <input id="holidayLabel" maxlength="60" placeholder="z. B. Herbstferien"></label><button class="primary" id="holidayAdd">＋ Eintragen</button></div><div id="holidayList" class="extra-grid"></div></section></div>
-<div class="tabpage" id="tab-yearreview" hidden><section class="panel"><div class="kicker">DEIN RÜCKBLICK</div><h2>📆 LEGEND Jahresrückblick</h2><p class="tip">Dein persönlicher Rückblick auf abgeschlossene Trainingstage, Erholung und Ziele – ohne Körpervergleiche.</p><label>Jahr <select id="reviewYear"></select></label><div id="yearReviewContent" class="extra-grid private-content"></div><div class="actions"><button class="primary" id="yearPrint">🖨️ Jahresrückblick drucken / PDF</button><button class="primary" id="ultraCertButton">🏅 Jahresurkunde als PDF</button></div><p class="tip">Die Urkunde lässt sich im Druckdialog als PDF sichern. Sie zeigt deine markierten Tage, keine Körpermesswerte.</p></section></div>
+
 <div class="tabpage" id="tab-settings" hidden>
 <section class="panel" id="v23MusicFiles"><div class="kicker">DEINE MUSIK</div><h2>🎧 Eigene MP3-Musik & Playlists</h2><p class="tip">Füge eigene Audiodateien hinzu. Die Dateien werden nur auf diesem Gerät im Browser gespeichert. Bitte sichere deine Musikdateien zusätzlich außerhalb der App.</p><label class="settinglabel">Musikdateien hinzufügen (MP3, M4A, WAV, OGG)<input type="file" id="v23MusicUpload" accept="audio/*,.mp3,.m4a,.wav,.ogg" multiple></label><p id="v23MusicStatus" class="tip"></p><div class="setting-row"><label>Playlist <select id="v23Playlist"></select></label><label>Neue Playlist <input id="v23PlaylistName" placeholder="z. B. Meine Lieblingssongs" maxlength="50"></label><button class="soft" type="button" id="v23AddPlaylist">Playlist erstellen</button></div><div id="v23SongList"></div><audio id="v23Audio" controls preload="none" style="width:100%;margin-top:14px"></audio><div class="actions"><button class="soft" id="v23PrevSong" type="button">⏮ Zurück</button><button class="soft" id="v23NextSong" type="button">Weiter ⏭</button></div></section>
 <section class="panel"><div class="kicker">GERÄTE-SPEICHER</div><h2>💾 Speicherübersicht</h2><div id="v23StorageReport"></div><button type="button" class="soft" id="v23StorageRefresh">Aktualisieren</button></section>
 <section class="panel"><div class="kicker">ERINNERUNGEN</div><h2>🔔 Optionale Benachrichtigungen</h2><p class="tip">Die App kann dich zu einer gewählten Uhrzeit erinnern, solange sie geöffnet ist. Systembenachrichtigungen benötigen Browser-Erlaubnis und HTTPS; auf iPhone können sie je nach Browser eingeschränkt sein.</p><div class="setting-row"><label>Uhrzeit <input type="time" id="v23ReminderTime" value="17:00"></label><label><input type="checkbox" id="v23ReminderOn"> Erinnerungen aktivieren</label></div><button type="button" class="soft" id="v23AskNotification">Benachrichtigungen erlauben</button><p id="v23ReminderStatus" class="tip"></p></section>
-<section class="panel"><div class="kicker">DEIN TAGEBUCH</div><h2>📝 Persönliche Tagesnotizen</h2><label>Datum <input id="v23NoteDate" type="date"></label><textarea id="v23NoteText" rows="5" maxlength="4000" placeholder="Wie war dein Tag? Was hat Spaß gemacht?"></textarea><div class="actions"><button id="v23SaveNote" class="primary" type="button">Notiz speichern</button><button id="v23DeleteNote" class="soft" type="button">Notiz löschen</button></div><p id="v23NoteStatus" class="tip"></p></section>
+
 <section class="panel" id="legendMusicPanel"><div class="legendVisualizer" id="legendVisualizer" aria-label="Musikvisualisierung"></div><h2>🎵 LEGEND MUSIC PLAYER</h2><p class="tip">Fünf eigens programmierte instrumentale Musikstile. Sie werden direkt in deinem Browser erzeugt, ohne Musik-Downloads oder Streaming. Start nur nach Klick auf Play.</p><div class="legendMusicCard"><div class="legendMusicArt">👑 <span id="legendMusicIcon">🎻</span></div><div><strong id="legendMusicTitle">Royal Epic</strong><p id="legendMusicDescription">Epische Fanfaren und Trommeln</p></div><div class="legendMusicControls"><button type="button" id="legendMusicPrev" aria-label="Vorheriger Stil">⏮</button><button type="button" class="primary" id="legendMusicPlay" aria-label="Musik abspielen">▶ Musik starten</button><button type="button" id="legendMusicNext" aria-label="Nächster Stil">⏭</button></div><label for="legendMusicGenre">Musikstil</label><select id="legendMusicGenre"><option value="royal">👑 Royal Epic</option><option value="phonk">🔥 Phonk</option><option value="edm">⚡ EDM / Electronic</option><option value="lofi">☁️ Lo-Fi Chill</option><option value="victory">🏆 Victory Music</option></select><label for="legendMusicVolume">🔊 Lautstärke <output id="legendMusicVolumeValue">25 %</output></label><input type="range" id="legendMusicVolume" min="0" max="65" value="25" step="1"><p id="legendMusicStatus" class="tip" role="status">Bereit · Musik läuft nur, wenn du sie einschaltest.</p></div></section><section class="panel" id="legendUpdatePanel"><div class="legendUpdateBanner">✨ ROYALPULSE 2.4.2 · PIN-Fix · 365-Tage-Kalender · Musikvisualisierung</div><div class="kicker">LEGEND UPDATE SYSTEM</div><h2>🔄 Updates & Fortschrittsschutz</h2><p class="tip"><strong>Installierte Version: <span id="legendVersion">2.1.0</span></strong> · Deine bisherigen lokalen Daten werden beim normalen Update nicht gelöscht.</p><p id="legendUpdateStatus" class="ultraStatus" role="status">Prüfe auf Updates, wenn du die App über eine feste HTTPS-Adresse verwendest.</p><div class="actions"><button type="button" class="primary" id="legendCheckUpdate">🔎 Auf Update prüfen</button><button type="button" class="soft" id="legendPrepareUpdate">🛡️ Vor Update sichern</button><button type="button" class="soft" id="legendApplyUpdate" hidden>⬆ Update installieren</button></div><p class="tip">Updates funktionieren automatisch nur, wenn neue App-Dateien unter <strong>derselben HTTPS-Adresse</strong> bereitgestellt werden. Die App benötigt dafür einen Webserver. Eine neue heruntergeladene HTML-Datei übernimmt Daten nicht automatisch. MacBook und iPhone synchronisieren sich nicht gegenseitig.</p></section><section class="panel"><div class="kicker">ROYAL ULTRA</div><h2>🌌 Dynamische Hintergründe</h2><p class="tip">Wähle eine dezente Animation oder schalte sie vollständig aus.</p><label>Hintergrundwelt <select id="ultraAtmosphereChoice"><option value="gold">👑 Königliches Gold</option><option value="aurora">🌈 Polarlicht</option><option value="galaxy">🌌 Galaxie</option><option value="off">Aus</option></select></label></section><section class="panel"><h3>👑 Profilbild verwalten</h3><p class="tip">Dein Profil ist nicht mehr in der Hauptnavigation. Hier kannst du weiterhin dein Bild und gekaufte Profilrahmen verwalten.</p><button type="button" class="soft" data-jump="profile">Profilbild öffnen</button></section><section class="panel"><div class="kicker">DEIN LOOK</div><h2>⚙️ Einstellungen & Designstudio</h2><p class="tip">Wähle aus 50 Farbstilen. Über das Zahnrad oben rechts erreichst du diese Einstellungen jederzeit. Änderungen werden auf diesem Gerät gespeichert.</p><div class="setting-row"><label>Startdatum <input id="startDate" type="date"></label><label>Darstellung <select id="modeSetting"><option value="dark">Dark Mode</option><option value="light">Light Mode</option><option value="auto">Automatisch (System)</option></select></label></div><div class="setting-row"><label><input id="privacyToggle" type="checkbox"> Privatsphäre-Modus: persönliche Angaben unscharf</label></div><div class="setting-row"><label><input id="reminderToggle" type="checkbox"> Freiwillige Erinnerungen im Dashboard anzeigen</label><label>Uhrzeit <input id="reminderTime" type="time" value="17:00"></label></div><p class="tip">Erinnerungen erscheinen nur, wenn die Seite geöffnet ist. Keine Hintergrundbenachrichtigungen. Privatsphäre-Modus ist keine Verschlüsselung.</p><h3>🔐 App-Bildschirmsperre</h3><p class="tip">Optionaler 4- bis 8-stelliger PIN für diese App auf diesem Gerät. Dies ist eine einfache Bildschirmsperre, <strong>keine Verschlüsselung</strong> und kein Schutz vor Personen mit Zugriff auf Browserdateien oder Sicherungen.</p><div class="actions"><input id="newPin" type="password" inputmode="numeric" pattern="[0-9]{4,8}" minlength="4" maxlength="8" placeholder="Neuen PIN eingeben" aria-label="Neuer PIN"><button class="soft" id="setPin">PIN aktivieren / ändern</button><button class="soft" id="removePin">PIN entfernen</button><button class="soft" id="lockNow">Jetzt sperren</button></div><p id="pinFeedback" class="tip" aria-live="polite"></p><h3>📱 App-Symbole</h3><p class="tip">Wähle dein Lieblingssymbol. Die Auswahl wird auf diesem Gerät gespeichert. Auf dem iPhone: Danach die Website in Safari erneut zum Home-Bildschirm hinzufügen. Ein bereits installiertes Symbol kann iOS nicht automatisch austauschen.</p><div id="appIconPicker" class="icon-picker"></div><p id="legendIconStatus" class="tip" role="status"></p><p class="tip">Tipp: Öffne diese Seite in Safari (nicht in der Dateien-Vorschau), wähle ein Icon und tippe auf Teilen → Zum Home-Bildschirm. Entferne das alte Home-Bildschirm-Symbol erst, nachdem du deinen Fortschritt gesichert hast.</p><h3>🎨 Farbwelten</h3><div class="themeGrid" id="themeGrid"></div><h3>✨ Darstellung</h3><div class="actions"><label class="settinglabel">Schriftgröße <select id="fontSetting"><option value="normal">Normal</option><option value="large">Groß</option><option value="xl">Extra groß</option></select></label><label class="settinglabel">Ecken <select id="roundSetting"><option value="soft">Rund</option><option value="square">Kantig</option></select></label><label class="settinglabel">Animationen <select id="motionSetting"><option value="on">An</option><option value="off">Aus</option></select></label></div></section><section class="panel"><div class="kicker">FORTSCHRITTSSCHUTZ</div><h2>🛡️ Automatische lokale Sicherungen</h2><p class="tip">Bis zu drei lokale Sicherungspunkte auf diesem Gerät. Eine heruntergeladene Backup-Datei ist für Gerätewechsel sicherer.</p><p id="legendAutosaveStatus" class="tip">Wird eingerichtet …</p><div class="actions"><button type="button" id="legendSnapshotNow" class="soft">Jetzt Sicherungspunkt erstellen</button><button type="button" id="legendRestoreSnapshot" class="soft">Letzten Sicherungspunkt wiederherstellen</button></div></section><section class="panel"><h2>💾 Datenschutz & Datensicherung</h2><p class="tip">Die Einträge liegen lokal im Browserprofil. Andere Personen mit Zugriff auf dein Gerät können sie möglicherweise sehen. Beim Öffnen von YouTube gelten dessen Datenschutzregeln.</p><div class="actions"><button class="soft" id="exportAll">⬇ Alle Daten sichern</button><button class="soft" id="importAll">⬆ Sicherung laden</button></div><div class="ultraPanel"><h3>🛡️ Datensicherungsassistent</h3><p class="tip">Sichert auch Shop, Münzverlauf, Ferien, Profilbild und Einstellungen, soweit sie in diesem Browser gespeichert sind. Die JSON-Datei ist <strong>nicht verschlüsselt</strong>.</p><div class="actions"><button type="button" class="primary" id="ultraBackupDownload">1. Vollständige Sicherung herunterladen</button><button type="button" class="soft" id="ultraBackupChoose">2. Sicherung prüfen & wiederherstellen</button></div><input id="ultraBackupFile" type="file" accept=".json,application/json" hidden><p id="ultraBackupStatus" class="ultraStatus" role="status">Tipp: Sichere deine Datei vor dem Gerätewechsel an einem geschützten Ort.</p></div><p class="tip">Die Sicherung enthält auch deine täglichen Ziele und dein Journal. Bewahre sie geschützt auf.</p></section></div>
-<div class="tabpage" id="tab-checkin" hidden>
+<div class="tabpage" id="tab-checkin" hidden aria-hidden="true" style="display:none!important">
+<section class="panel"><div class="kicker">DEIN TAGEBUCH</div><h2>📝 Persönliche Tagesnotizen</h2><label>Datum <input id="v23NoteDate" type="date"></label><textarea id="v23NoteText" rows="5" maxlength="4000" placeholder="Wie war dein Tag? Was hat Spaß gemacht?"></textarea><div class="actions"><button id="v23SaveNote" class="primary" type="button">Notiz speichern</button><button id="v23DeleteNote" class="soft" type="button">Notiz löschen</button></div><p id="v23NoteStatus" class="tip"></p></section>
+
 <section class="panel"><div class="kicker">Dein persönliches Journal</div><h2>✨ Wie geht es dir heute?</h2><p class="tip">Du kannst hier festhalten, was dir gutgetan hat. Es gibt keine Pflicht, jeden Tag etwas einzutragen.</p>
 <div class="checkGrid"><label>Datum<input id="journalDate" type="date"></label><label>Wie fühlst du dich?<select id="journalMood"><option value="">Auswählen</option><option>😊 Gut</option><option>🙂 Okay</option><option>😴 Müde</option><option>😌 Entspannt</option><option>😕 Nicht so gut</option></select></label></div>
 <label for="journalText">Was lief heute gut?</label><textarea id="journalText" rows="4" placeholder="Zum Beispiel: Ich hatte Spaß bei der Bewegung oder habe mir Zeit zum Ausruhen genommen."></textarea><div class="actions"><button class="primary" id="journalSave">💾 Eintrag speichern</button><button class="soft" id="journalExport">⬇ Journal sichern</button></div><p id="journalMessage" class="tip" aria-live="polite"></p></section>
@@ -386,7 +494,7 @@ document.addEventListener('visibilitychange',()=>{if(document.visibilityState===
 <section class="panel notice"><h2>🛡️ Sicher trainieren</h2><p class="tip">Der Tracker ist eine persönliche Zusammenstellung, kein offizieller Plan von Oliver Sjöström. Du bist noch im Wachstum: Ziel sind Fitness, Kraft und gute Gewohnheiten – keine Crash-Diät. Besprich den Plan mit einem Elternteil/Erziehungsberechtigten. Pausiere bei Schmerzen, Schwindel oder Übelkeit. Passe intensive Videos an und mache Pausen.</p></section>
 </div></div>
 </main>
-<footer>Externe Videos werden auf YouTube geöffnet und können sich ändern. Häkchen bleiben lokal in diesem Browser; andere Personen mit Zugriff auf dein Gerät könnten sie sehen. Sicherung exportieren, wenn du deinen Fortschritt behalten möchtest. <br><a href="https://www.youtube.com/@oliversjostrom" target="_blank" rel="noopener">Oliver Sjöström – YouTube-Kanal</a><div class="legend-footer-version" aria-label="App-Version">Version 2.5.2</div></footer>
+<footer>Trainingsvideos lassen sich im Trainingsplan abspielen; beim Start wird eine Verbindung zu YouTube hergestellt. Videos können extern gesperrt sein oder sich ändern. Häkchen bleiben lokal in diesem Browser; andere Personen mit Zugriff auf dein Gerät könnten sie sehen. Sicherung exportieren, wenn du deinen Fortschritt behalten möchtest. <br><a href="https://www.youtube.com/@oliversjostrom" target="_blank" rel="noopener">Oliver Sjöström – YouTube-Kanal</a><div class="legend-footer-version" aria-label="App-Version">Version 3.3.0</div></footer>
 <script>
 const vids={
  chest:["Brust, Schultern & Bauch – 30 Min","https://www.youtube.com/watch?v=Sv_2w3v1N_k"],
@@ -415,6 +523,25 @@ const weekPattern=[
 const KEY="oliver_dashboard_v3";let state={};try{state=JSON.parse(localStorage.getItem(KEY)||"{}")}catch(e){}
 let week=1;const daysEl=document.getElementById("days"),weeksEl=document.getElementById("weeks");
 function dData(n){let p=weekPattern[(n-1)%7];return {n,week:Math.ceil(n/7),type:p[0],name:p[1],desc:p[2],video:p[3],task:p[4],time:p[5]}}
+// Abwechslungsreiche Oliver-Sjöström-Videoauswahl je Trainingswoche.
+// Links führen zur Kanalsuche: Verfügbarkeit einzelner Videos kann sich ändern.
+const weeklyVideoTopics=[
+ ['upper body workout','full body cardio','low impact cardio','strength cardio','full body workout','walking workout'],
+ ['arms abs workout','cardio hiit','no jumping workout','bodyweight strength','total body workout','dance cardio'],
+ ['chest shoulder abs','full body no equipment','low impact full body','strength workout','full body strength','cardio no jumping'],
+ ['upper body no equipment','standing cardio','low impact cardio','full body strength cardio','full body circuit','walking cardio'],
+ ['core upper body workout','full body cardio workout','no jumping cardio','bodyweight workout','full body hiit','easy cardio'],
+ ['arms shoulder workout','cardio workout','low impact workout','strength cardio workout','full body workout','standing workout'],
+ ['upper body strength','full body circuit','no jumping full body','strength workout no equipment','total body cardio','low impact cardio'],
+ ['abs arms workout','cardio no equipment','low impact cardio workout','full body strength workout','full body bodyweight','walking workout']
+];
+function weeklyVideo(dayNumber){
+ const w=Math.ceil(dayNumber/7),day=(dayNumber-1)%7;
+ if(day===6)return null; // Sonntag: Ruhetag ohne Pflichtvideo
+ const topics=weeklyVideoTopics[(w-1)%weeklyVideoTopics.length];
+ const topic=topics[day]+" "+(["15 min","20 min","25 min","30 min","no equipment","at home","workout"][(Math.floor((w-1)/8))%7]);
+ return {title:'Oliver Sjöström – '+topic.replace(/\b\w/g,c=>c.toUpperCase()),url:'https://www.youtube.com/@oliversjostrom/search?query='+encodeURIComponent(topic),week:w};
+}
 function save(){localStorage.setItem(KEY,JSON.stringify(state));updateStats()}
 const badges=[
 [1,'Erster Schritt','Du hast deinen ersten Tag markiert','🌱'],[3,'Dreierteam','Drei Tage geschafft','✨'],[5,'Fünf Sterne','Fünf Tage markiert','⭐'],[7,'Woche eins','Sieben Tage geschafft','🥉'],[10,'Zehn geschafft','Zehn Tage markiert','🎯'],[14,'Zwei Wochen','14 Tage geschafft','🥈'],[18,'Dranbleiber','18 Tage markiert','🧭'],[21,'Drei Wochen','21 Tage geschafft','🌟'],[25,'Vierteljahrhundert','25 Tage markiert','💫'],[30,'Monat eins','30 Tage geschafft','🏅'],[35,'Ruhiger Rhythmus','35 Tage markiert','🌿'],[40,'Fortschrittsfan','40 Tage geschafft','🎈'],[45,'Halbzeit','45 Tage geschafft','🏆'],[50,'Goldene 50','50 Tage geschafft','🥇'],[55,'Weiter gehts','55 Tage markiert','🚀'],[60,'Monat zwei','60 Tage geschafft','💎'],[65,'Konstant','65 Tage markiert','🔆'],[70,'Zehn Wochen','70 Tage geschafft','🎖️'],[75,'Ziel in Sicht','75 Tage geschafft','🌈'],[80,'Achtzig','80 Tage geschafft','🪄'],[85,'Fast am Ziel','85 Tage geschafft','🔥'],[88,'Endspurt','88 Tage markiert','🎉'],[89,'Noch ein Tag','89 Tage geschafft','🌠'],[90,'90 Tage','90 Tage geschafft','👑'],[180,'Halbes Jahr','180 Tage geschafft','🌟'],[270,'Neun Monate','270 Tage geschafft','💎'],[365,'Jahreslegende','Alle 365 Tage geschafft','🏆']].map(([n,t,d,e])=>({n,t,d,e}));
@@ -422,8 +549,41 @@ function renderAchievements(count){let xp=count*20,level=Math.floor(xp/200)+1,wi
 function updateStats(){renderHeatmap();renderMonths();let count=Array.from({length:365},(_,i)=>i+1).filter(n=>state[n]===true).length;renderAchievements(count);document.getElementById("doneCount").textContent=count;document.getElementById("pct").textContent=Math.round(count/365*100)+"%";document.getElementById("bar").style.width=count/365*100+"%";let weeksDone=0;for(let w=1;w<=52;w++){let a=(w-1)*7+1,b=w*7;if(Array.from({length:b-a+1},(_,i)=>a+i).every(n=>state[n]))weeksDone++}if(Array.from({length:1},(_,i)=>365+i).every(n=>state[n]))weeksDone++;document.getElementById("weekCount").textContent=weeksDone+"/53";let next=Array.from({length:365},(_,i)=>i+1).find(n=>!state[n]);document.getElementById("nextTitle").textContent=next?"Tag "+next+" wartet auf dich":"Alle 365 Tage abgehakt! 🎉";document.getElementById("nextText").textContent=next?"Dein nächster offener Tag: "+dData(next).name+". Geh in deinem Tempo.":"Stark drangeblieben! Jetzt geht es darum, gute Gewohnheiten beizubehalten."}
 function toggle(n){if(state[n])delete state[n];else state[n]=true;save();renderDays()}
 function renderWeeks(){weeksEl.innerHTML="";for(let w=1;w<=53;w++){let b=document.createElement("button");b.textContent=w===53?"Tag 365":"Woche "+w;b.className=w===week?"active":"";b.onclick=()=>{week=w;renderWeeks();renderDays()};weeksEl.appendChild(b)}}
-function renderDays(){daysEl.innerHTML="";let start=(week-1)*7+1,end=Math.min(365,week*7);for(let n=start;n<=end;n++){let d=dData(n),done=!!state[n],el=document.createElement("article");el.className="day"+(done?" done":"");el.id="day"+n;let link=d.video?`<a class="video" href="${vids[d.video][1]}" target="_blank" rel="noopener">▶ ${vids[d.video][0]}</a>`:"";if(n%7===2 || n%7===4){let choices=n%7===2?tuesdayChoices:thursdayChoices;link+=`<div class="sundayChoices"><strong>▶ Oliver-Sjöström-Video (${n%7===2?'Dienstag':'Donnerstag'})</strong><p>Anspruchsvollere Workouts als Kanalsuche; wähle ein passendes Video, mache Pausen und trainiere nicht bei Schmerzen.</p>${choices.map(([title,url])=>`<a href="${url}" target="_blank" rel="noopener">${title}</a>`).join('')}</div>`;}if(n%7===0){link+=`<div class="sundayChoices"><strong>☀️ Sonntags-Auswahl (freiwillig)</strong><p>Entdecke weitere Videos auf Olivers Kanal. Du kannst auch einfach pausieren.</p>${sundayChoices.map(([title,url])=>`<a href="${url}" target="_blank" rel="noopener">▶ ${title}</a>`).join('')}</div>`;}el.innerHTML=`<div class="daytop"><div class="number">${done?"✓":String(n).padStart(2,"0")}</div><div><div class="tag">${d.type} · WOCHE ${d.week}</div><h3>TAG ${n}: ${d.name}</h3><div class="sub">${d.time}</div></div></div><p>${d.desc}</p>${link}<label class="task"><input type="checkbox" ${done?"checked":""} aria-label="Tag ${n} erledigt"><span><strong>${d.task}</strong><small>Einmal antippen, wenn fertig.</small></span></label><button class="finish">${done?"✓ ERLEDIGT – zum Rückgängigmachen tippen":"☐ TAG ABHAKEN"}</button>`;el.querySelector("input").onchange=()=>toggle(n);el.querySelector(".finish").onclick=()=>toggle(n);daysEl.appendChild(el)}updateStats()}
-function selectTab(tab){if(tab==='statistics')tab='analytics';document.querySelectorAll(".tabpage[id^=tab-]").forEach(el=>{if(el.id!=="tab-info")el.hidden=el.id!=="tab-"+tab});document.querySelectorAll(".tabnav button").forEach(b=>b.classList.toggle("active",b.dataset.tab===tab));document.getElementById("tab-info").hidden=tab!=="overview";window.scrollTo({top:0,behavior:"smooth"})}
+// Direkte Videos statt Suchergebnisse: Auswahl rotiert je Woche.
+// Die Videotitel sind bewusst neutral, da die Verfügbarkeit extern bestimmt wird.
+const royalPlayerVideos=[
+ {id:'Sv_2w3v1N_k',title:'Workout-Video A'},
+ {id:'onY-vv46tpU',title:'Workout-Video B'},
+ {id:'zbqjV99LZr8',title:'Workout-Video C'}
+];
+function royalPlayerVideo(n){return royalPlayerVideos[(Math.floor((n-1)/7)+(n-1)%7)%royalPlayerVideos.length]}
+// YouTube error 153: embedded playback cannot be guaranteed by an external site.
+// Open the video on YouTube instead of creating an iframe that fails.
+function royalStartVideo(button){
+ const id=button.dataset.videoId;
+ if(!royalPlayerVideos.some(v=>v.id===id))return;
+ window.open('https://www.youtube.com/watch?v='+encodeURIComponent(id),'_blank','noopener,noreferrer');
+}
+function renderDays(){
+ daysEl.innerHTML='';let start=(week-1)*7+1,end=Math.min(365,week*7);
+ for(let n=start;n<=end;n++){
+  let d=dData(n),done=!!state[n],el=document.createElement('article');
+  el.className='day'+(done?' done':'');el.id='day'+n;
+  let rest=(n-1)%7===6;
+  let player='';
+  if(!rest){
+   const v=royalPlayerVideo(n);
+   player=`<div class="royal-inline-player" style="margin:15px 0;padding:14px;border:1px solid var(--line);border-radius:16px;background:var(--panel2)"><strong>🎥 ${v.title} · Woche ${d.week}</strong><p class="tip">YouTube verhindert manchmal die Wiedergabe innerhalb anderer Websites (Fehler 153). Öffne das Workout daher direkt auf YouTube. Dein Trainingsfortschritt bleibt hier gespeichert.</p><button type="button" class="primary royal-play-button" data-video-id="${v.id}" style="width:100%;margin:10px 0">▶ Workout auf YouTube starten</button><a class="video" href="https://www.youtube.com/watch?v=${v.id}" target="_blank" rel="noopener noreferrer">↗ Auf YouTube öffnen</a></div>`;
+  }else{player='<p class="tip">🌿 Ruhetag – kein Workout erforderlich.</p>'}
+  el.innerHTML=`<div class="daytop"><div class="number">${done?'✓':String(n).padStart(2,'0')}</div><div><div class="tag">${d.type} · WOCHE ${d.week}</div><h3>TAG ${n}: ${d.name}</h3><div class="sub">${d.time}</div></div></div><p>${d.desc}</p>${player}<label class="task"><input type="checkbox" ${done?'checked':''} aria-label="Tag ${n} erledigt"><span><strong>${d.task}</strong><small>Einmal antippen, wenn fertig.</small></span></label><button class="finish">${done?'✓ ERLEDIGT – zum Rückgängigmachen tippen':'☐ TAG ABHAKEN'}</button>`;
+  el.querySelector('input').onchange=()=>toggle(n);
+  el.querySelector('.finish').onclick=()=>toggle(n);
+  el.querySelector('.royal-play-button')?.addEventListener('click',function(){royalStartVideo(this)});
+  daysEl.appendChild(el);
+ }
+ updateStats();
+}
+function selectTab(tab){if(tab==='yearreview')tab='realcalendar';if(tab==='checkin')tab='realcalendar';if(tab==='statistics')tab='analytics';document.querySelectorAll(".tabpage[id^=tab-]").forEach(el=>{if(el.id!=="tab-info")el.hidden=el.id!=="tab-"+tab});document.querySelectorAll(".tabnav button").forEach(b=>b.classList.toggle("active",b.dataset.tab===tab));document.getElementById("tab-info").hidden=tab!=="overview";window.scrollTo({top:0,behavior:"smooth"})}
 document.querySelectorAll(".tabnav button").forEach(b=>b.addEventListener("click",()=>selectTab(b.dataset.tab)));document.getElementById('settingsGear').addEventListener('click',()=>selectTab('settings'));document.querySelectorAll("[data-jump]").forEach(b=>b.addEventListener("click",()=>selectTab(b.dataset.jump)));
 function goTo(n){selectTab("calendar");week=Math.ceil(n/7);renderWeeks();renderDays();document.getElementById("day"+n)?.scrollIntoView({behavior:"smooth",block:"center"})}
 document.getElementById("jumpCalendar").onclick=()=>selectTab("calendar");
@@ -527,7 +687,7 @@ function trophies(){let box=document.getElementById('royalTrophies');box.replace
 const messages=['Zeit für eine wohlverdiente Pause 🌿','Du darfst stolz auf deine Beständigkeit sein 🌟','Ausruhen gehört zum Plan 💚','Bewegung darf Spaß machen 🎵','Ein guter Tag braucht keine Perfektion ✨','Du hast heute die Wahl, was dir guttut 🌈','Kleine Schritte sind auch Schritte 🏅','Schlaf und Erholung sind wertvoll 🌙','Genieß einen Moment ohne Leistungsdruck ☀️','Gut auf dich achten ist ein Erfolg 💫'];
 function reward(){const date=todayKey();if(!royal.rewards)royal.rewards={};let has=Object.prototype.hasOwnProperty.call(royal.rewards,date);document.getElementById('claimReward').disabled=has;document.getElementById('rewardResult').textContent=has?'🎁 '+messages[royal.rewards[date]]:'Deine heutige Motivationskarte wartet.';const hist=document.getElementById('rewardHistory');hist.replaceChildren();Object.entries(royal.rewards).sort((a,b)=>b[0].localeCompare(a[0])).slice(0,30).forEach(([day,i])=>{let e=document.createElement('div');e.className='mini-card';e.textContent='🎁 '+day+' · '+messages[i];hist.append(e)})}
 document.getElementById('claimReward').onclick=()=>{royal.rewards ||= {};const date=todayKey();if(date in royal.rewards)return;royal.rewards[date]=Math.abs([...date].reduce((a,c)=>a*31+c.charCodeAt(0),7))%messages.length;persist();reward()};
-const defaultLinks=[['calendar','📅 Trainingsplan'],['achievements','🏆 Erfolge'],['goals','🎯 Ziele'],['realcalendar','🗓️ Kalender'],['videos','🎬 Videothek'],['analytics','📊 Statistiken'],['rewards','🎁 Belohnungen']];
+const defaultLinks=[['calendar','📅 Trainingsplan'],['achievements','🏆 Erfolge'],['goals','🎯 Ziele'],['realcalendar','🗓️ Kalender'],['analytics','📊 Statistiken'],['rewards','🎁 Belohnungen']];
 function links(){royal.links ||= defaultLinks.map(x=>x[0]);royal.links=[...new Set(royal.links.map(k=>k==='statistics'?'analytics':k))];royal.hidden ||= [];royal.hidden=royal.hidden.map(k=>k==='statistics'?'analytics':k);const area=document.querySelector('#tab-overview .quicklinks');area.replaceChildren();royal.links.filter(k=>!royal.hidden.includes(k)).forEach(k=>{let item=defaultLinks.find(x=>x[0]===k);if(!item)return;let b=document.createElement('button');b.className='soft';b.textContent=item[1];b.onclick=()=>{selectTab(k);if(typeof refresh==='function')refresh()};area.append(b)});const editor=document.getElementById('dashboardEditor');if(!editor)return;editor.replaceChildren();royal.links.forEach((k,i)=>{let item=defaultLinks.find(x=>x[0]===k);if(!item)return;let line=document.createElement('div');line.className='editor-line';let check=document.createElement('input');check.type='checkbox';check.checked=!royal.hidden.includes(k);check.onchange=()=>{royal.hidden=check.checked?royal.hidden.filter(x=>x!==k):[...royal.hidden,k];persist();links()};let label=document.createElement('span');label.textContent=item[1];line.append(check,label);for(const [sign,delta] of [['↑',-1],['↓',1]]){let b=document.createElement('button');b.className='soft small';b.textContent=sign;b.disabled=i+delta<0||i+delta>=royal.links.length;b.onclick=()=>{[royal.links[i],royal.links[i+delta]]=[royal.links[i+delta],royal.links[i]];persist();links()};line.append(b)}editor.append(line)})}
 document.getElementById('resetEditor')?.addEventListener('click',()=>{royal.links=defaultLinks.map(x=>x[0]);royal.hidden=[];persist();links()});
 // PIN screen-lock is initialized independently in the startup controller.
@@ -597,7 +757,7 @@ function playRoyalIntro(force=false){
  intro.querySelector('button').addEventListener('click',()=>{intro.remove();closing=true});
  setTimeout(close,4600);
 }
-/* Startanimation in Version 2.5.2 deaktiviert. */
+/* Startanimation in Version 2.6.2 deaktiviert. */
 const settingsPage=document.getElementById('tab-settings');
 /* Startanimation-Button entfernt. */
 })();
@@ -818,7 +978,7 @@ file?.addEventListener('change',async()=>{
 </script><script>
 (function(){
 'use strict';
-const APP_VERSION='2.5.2';
+const APP_VERSION='3.2.0';
 const $=id=>document.getElementById(id);
 const status=$('legendUpdateStatus');
 const button=$('legendApplyUpdate');
@@ -1021,7 +1181,7 @@ const renderCalendar=()=>{
   if(!months.has(key))months.set(key,{date:new Date(day.getFullYear(),day.getMonth(),1),days:[]});
   months.get(key).days.push({n,date:day});
  }
- const host=$('legendYearMonths');host.replaceChildren();
+ const host=$('legendYearMonths');if(!host)return;host.replaceChildren();
  for(const month of months.values()){
   const card=document.createElement('div');card.className='legendYearMonth';
   const h=document.createElement('h3');h.textContent=fmt.format(month.date);card.append(h);
@@ -1318,17 +1478,19 @@ function init(){
    // Clear inline custom colors from the old 50-theme picker before applying premium theme.
    ['--bg','--panel','--panel2','--mint','--line','--white','--muted'].forEach(k=>document.body.style.removeProperty(k));
  },true));
- // One calendar tab: keep both calendar views and their original element IDs/events.
- const plan=$('tab-calendar'),annual=$('tab-realcalendar');
- if(plan&&annual){
-   const heading=document.createElement('h2');heading.textContent='🗓️ Jahreskalender';heading.style.marginTop='26px';
-   plan.append(heading);
-   while(annual.firstChild)plan.appendChild(annual.firstChild);
-   annual.remove();
-   document.querySelectorAll('[data-tab="realcalendar"]').forEach(b=>b.remove());
-   // Existing navigation links point to the combined calendar.
-   document.querySelectorAll('[data-link="realcalendar"],[data-target="realcalendar"]').forEach(b=>{b.dataset.link='calendar';b.dataset.target='calendar'});
-   const nav=document.querySelector('[data-tab="calendar"]');if(nav)nav.textContent='📅 Kalender & Jahreskalender';
+ // Separate training plan from the unified calendar: preserve all original IDs and handlers.
+ const training=$('tab-calendar'),calendarTab=$('tab-realcalendar');
+ if(training&&calendarTab){
+   const year=$('legendYearCalendar');
+   if(year)calendarTab.insertBefore(year,calendarTab.firstChild);
+   const planNav=document.querySelector('.tabnav button[data-tab="calendar"]');
+   if(planNav)planNav.textContent='💪 Trainingsplan';
+   const calendarNav=document.querySelector('.tabnav button[data-tab="realcalendar"]');
+   if(calendarNav)calendarNav.textContent='📅 Kalender';
+   // Update quick-access links: calendar means training, realcalendar means calendar.
+   document.querySelectorAll('[data-jump="calendar"]').forEach(btn=>{
+     if(/kalender|jahres/i.test(btn.textContent)&&!/trainingsplan/i.test(btn.textContent))btn.dataset.jump='realcalendar';
+   });
  }
  // Keep local backups in settings, remove only the unfinished cloud account UI.
  const cloud=$('rpCloudBtn');if(cloud)cloud.remove();
@@ -1352,4 +1514,176 @@ function init(){
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
 })();
 </script>
-</body></html>
+
+
+<style>
+.rp-step-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin:16px 0}
+.rp-step-card{padding:18px;border:1px solid var(--line);border-radius:17px;background:var(--panel2)}
+.rp-step-card b{display:block;font-size:1.65rem;color:var(--mint)}
+.rp-step-card span{color:var(--muted);font-size:.86rem}
+#rpStepsInput{width:100%;max-width:340px;background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:12px;color:var(--white)}
+.rp-step-history{display:grid;gap:8px}.rp-step-row{display:flex;justify-content:space-between;gap:10px;padding:11px 13px;border:1px solid var(--line);border-radius:12px;background:var(--panel2)}
+</style>
+<script>
+(()=>{
+'use strict';
+const STORAGE='royalpulse_manual_steps_v1';
+const read=()=>{try{const v=JSON.parse(localStorage.getItem(STORAGE)||'{}');return v&&typeof v==='object'&&!Array.isArray(v)?v:{}}catch{return {}}};
+const fmt=new Intl.NumberFormat('de-DE');
+const today=()=>{const d=new Date(),pad=x=>String(x).padStart(2,'0');return `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`};
+const km=n=>n*.0007; // Approximate distance with 70 cm per step, not a personal measurement.
+function init(){
+ const nav=document.querySelector('.tabnav'),main=document.querySelector('main');if(!nav||!main||document.getElementById('tab-steps'))return;
+ const btn=document.createElement('button');btn.type='button';btn.dataset.tab='steps';btn.textContent='👟 Schritte';
+ const calendarBtn=nav.querySelector('[data-tab="realcalendar"]');if(calendarBtn)calendarBtn.after(btn);else nav.appendChild(btn);
+ const page=document.createElement('div');page.className='tabpage';page.id='tab-steps';page.hidden=true;
+ page.innerHTML=`<section class="panel"><div class="kicker">ROYALPULSE · BEWEGUNG</div><h2>👟 Mein Schritt-Tagebuch</h2><p class="tip">Trage deine Schritte selbst ein. Die Strecke ist eine ungefähre Schätzung (0,70 m pro Schritt). Ohne Schrittziel oder Leistungsdruck.</p><label for="rpStepsDate">Datum</label><div class="setting-row"><input type="date" id="rpStepsDate"><label for="rpStepsInput">Schritte <input type="number" id="rpStepsInput" min="0" max="150000" step="1" inputmode="numeric" placeholder="z. B. 6500"></label></div><div class="actions"><button class="primary" type="button" id="rpStepsSave">✓ Eintrag speichern</button><button class="soft" type="button" id="rpStepsDelete">Eintrag für diesen Tag löschen</button></div><p class="tip" id="rpStepsStatus" role="status" aria-live="polite"></p><div class="rp-step-grid"><div class="rp-step-card"><b id="rpStepsToday">0</b><span>Schritte am gewählten Tag</span></div><div class="rp-step-card"><b id="rpStepsKm">0,00 km</b><span>Geschätzte Strecke am gewählten Tag</span></div><div class="rp-step-card"><b id="rpStepsWeek">0</b><span>Schritte in den letzten 7 Tagen</span></div><div class="rp-step-card"><b id="rpStepsWeekKm">0,00 km</b><span>Geschätzte Strecke in 7 Tagen</span></div></div><p class="tip">🔥 kcal: Aus der Schrittzahl allein lässt sich der Energieverbrauch nicht zuverlässig berechnen. Deshalb zeigt RoyalPulse hier keine irreführende Kalorienzahl.</p></section><section class="panel"><h2>📅 Deine letzten Einträge</h2><div id="rpStepsHistory" class="rp-step-history"></div><p class="tip">Alle Angaben bleiben lokal in diesem Browser. Löschen der Browserdaten entfernt diese Einträge.</p></section>`;
+ main.appendChild(page);
+ const $=id=>document.getElementById(id),date=$('rpStepsDate'),input=$('rpStepsInput'),status=$('rpStepsStatus');date.value=today();
+ const validDate=x=>/^\d{4}-\d{2}-\d{2}$/.test(x)&&!Number.isNaN(Date.parse(x+'T12:00:00'));
+ function render(){const data=read(),selected=date.value,n=Number(data[selected]||0);$('rpStepsToday').textContent=fmt.format(n);$('rpStepsKm').textContent=km(n).toLocaleString('de-DE',{minimumFractionDigits:2,maximumFractionDigits:2})+' km';
+ let week=0;const base=new Date(today()+'T12:00:00');for(let i=0;i<7;i++){const d=new Date(base);d.setDate(d.getDate()-i);const key=`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;week+=Number(data[key]||0)}
+ $('rpStepsWeek').textContent=fmt.format(week);$('rpStepsWeekKm').textContent=km(week).toLocaleString('de-DE',{minimumFractionDigits:2,maximumFractionDigits:2})+' km';
+ const entries=Object.entries(data).filter(([d,n])=>validDate(d)&&Number.isInteger(n)&&n>=0).sort((a,b)=>b[0].localeCompare(a[0])).slice(0,30);
+ const history=$('rpStepsHistory');history.replaceChildren();if(!entries.length){history.textContent='Noch keine Einträge.';return}
+ for(const [d,steps] of entries){const row=document.createElement('div');row.className='rp-step-row';const left=document.createElement('span'),right=document.createElement('strong');left.textContent=d;right.textContent=fmt.format(steps)+' Schritte · '+km(steps).toLocaleString('de-DE',{maximumFractionDigits:2})+' km';row.append(left,right);history.appendChild(row)}
+ }
+ function load(){input.value=Object.hasOwn(read(),date.value)?read()[date.value]:'';status.textContent='';render()}
+ date.addEventListener('change',load);
+ $('rpStepsSave').addEventListener('click',()=>{const n=Number(input.value);if(!validDate(date.value)||input.value.trim()===''||!Number.isInteger(n)||n<0||n>150000){status.textContent='Bitte ein gültiges Datum und eine ganze Schrittzahl von 0 bis 150.000 eingeben.';return}try{const data=read();data[date.value]=n;localStorage.setItem(STORAGE,JSON.stringify(data));status.textContent='✓ Schritte gespeichert.';render()}catch{status.textContent='Speichern fehlgeschlagen. Bitte Browserspeicher prüfen.'}});
+ $('rpStepsDelete').addEventListener('click',()=>{const data=read();delete data[date.value];try{localStorage.setItem(STORAGE,JSON.stringify(data));input.value='';status.textContent='Eintrag gelöscht.';render()}catch{status.textContent='Löschen fehlgeschlagen.'}});
+ // Existing tab handler is installed before this script and is based on data-tab attributes.
+ btn.addEventListener('click',()=>{if(typeof selectTab==='function')selectTab('steps');else{document.querySelectorAll('.tabpage[id^="tab-"]').forEach(el=>el.hidden=el!==page);nav.querySelectorAll('button').forEach(el=>el.classList.toggle('active',el===btn))}load()});
+ load();
+}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
+})();
+</script>
+<style>
+.rp29-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin:15px 0}.rp29-card{background:var(--panel2);border:1px solid var(--line);border-radius:14px;padding:16px}.rp29-card strong{font-size:1.5rem;display:block}.rp29-card small{opacity:.85}.rp29-bar{height:15px;background:rgba(127,127,127,.3);border-radius:50px;overflow:hidden}.rp29-bar>div{height:100%;background:linear-gradient(90deg,#62b4ff,#ffd879);transition:width .3s}
+#rpStepChart{width:100%;height:auto;max-height:290px;display:block}.rp-chart-label{font-size:12px;fill:var(--muted)}
+</style>
+<style>
+#tab-water input{background:var(--panel2);color:var(--white);border:1px solid var(--line);border-radius:12px;padding:11px;max-width:240px}
+</style>
+<script>
+/* RoyalPulse 2.9.1: steps chart + Royal levels, no drink tracker */
+(()=>{'use strict';
+const STEP_KEY='royalpulse_manual_steps_v1';
+const read=k=>{try{const x=JSON.parse(localStorage.getItem(k)||'{}');return x&&typeof x==='object'&&!Array.isArray(x)?x:{}}catch{return {}}};
+const nice=n=>Number(n).toLocaleString('de-DE');
+function init(){
+ const nav=document.querySelector('.tabnav'),main=document.querySelector('main');if(!nav||!main||document.getElementById('rpChartPanel'))return;
+ const stepsButton=nav.querySelector('[data-tab="steps"]');
+ const stepsPage=document.getElementById('tab-steps');
+ if(stepsPage&&!document.getElementById('rpChartPanel')){
+ const section=document.createElement('section');section.className='panel';section.id='rpChartPanel';section.innerHTML='<h2>📈 Schritte der letzten 7 Tage</h2><p class="tip">Deine eingetragenen Schritte als Diagramm. Kein tägliches Schrittziel.</p><svg id="rpStepChart" viewBox="0 0 680 265" role="img" aria-label="Schrittediagramm der letzten sieben Tage"></svg><p id="rpChartInfo" class="tip"></p>';stepsPage.appendChild(section);
+ }
+ const $=id=>document.getElementById(id);
+ function refresh(){const steps=read(STEP_KEY);
+ const svg=$('rpStepChart');if(!svg)return;svg.replaceChildren();const ns='http://www.w3.org/2000/svg';const node=(tag,attrs,txt)=>{const el=document.createElementNS(ns,tag);for(const [k,v] of Object.entries(attrs))el.setAttribute(k,v);if(txt!==undefined)el.textContent=txt;svg.appendChild(el);return el};
+ const base=new Date();base.setHours(12,0,0,0);const days=[];for(let i=6;i>=0;i--){const d=new Date(base);d.setDate(base.getDate()-i);const key=d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');days.push({date:d,steps:Math.max(0,Number(steps[key])||0)})}
+ const max=Math.max(1,...days.map(x=>x.steps));node('line',{x1:42,y1:220,x2:665,y2:220,stroke:'currentColor','stroke-opacity':'.3'});days.forEach((day,i)=>{const x=55+i*88,h=Math.max(0,day.steps/max*165),y=220-h;node('rect',{x,y,width:48,height:h,rx:6,fill:'#62b4ff'});node('text',{x:x+24,y:Math.max(16,y-8),'text-anchor':'middle',class:'rp-chart-label'},nice(day.steps));node('text',{x:x+24,y:242,'text-anchor':'middle',class:'rp-chart-label'},day.date.toLocaleDateString('de-DE',{weekday:'short'}))});$('rpChartInfo').textContent='Gesamt: '+nice(days.reduce((a,b)=>a+b.steps,0))+' Schritte in den letzten 7 Tagen.';
+ }
+ if(stepsButton)stepsButton.addEventListener('click',()=>setTimeout(refresh,0));document.addEventListener('visibilitychange',()=>{if(!document.hidden)refresh()});const save=$('rpStepsSave'),del=$('rpStepsDelete');if(save)save.addEventListener('click',()=>setTimeout(refresh,0));if(del)del.addEventListener('click',()=>setTimeout(refresh,0));refresh();
+}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
+})();
+</script>
+<script>
+/* RoyalPulse 2.9.0: drink journal only; no targets */
+(()=>{'use strict';
+const WATER_KEY='royalpulse_drinks_v1';
+const read=k=>{try{const x=JSON.parse(localStorage.getItem(k)||'{}');return x&&typeof x==='object'&&!Array.isArray(x)?x:{}}catch{return {}}};
+const today=()=>{const d=new Date();return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`};
+const nice=n=>Number(n).toLocaleString('de-DE');
+function init(){
+const nav=document.querySelector('.tabnav'),main=document.querySelector('main');if(!nav||!main||document.getElementById('tab-water'))return;
+function tab(name,title,after){const b=document.createElement('button');b.type='button';b.dataset.tab=name;b.textContent=title;const target=nav.querySelector(`[data-tab="${after}"]`);if(target)target.after(b);else nav.appendChild(b);const p=document.createElement('div');p.className='tabpage';p.id='tab-'+name;p.hidden=true;main.appendChild(p);b.addEventListener('click',()=>{document.querySelectorAll('.tabpage').forEach(el=>el.hidden=el!==p);nav.querySelectorAll('button').forEach(el=>el.classList.toggle('active',el===b));refresh()});return p}
+const water=tab('water','💧 Wasser','steps');water.innerHTML=`<section class="panel"><div class="kicker">ROYALPULSE · WOHLBEFINDEN</div><h2>💧 Mein Trinktagebuch</h2><p class="tip">Trage Wasser und andere Getränke freiwillig ein. Keine Trinkziele, keine Bewertungen.</p><label for="rp29Date">Datum</label><div class="setting-row"><input id="rp29Date" type="date"><label for="rp29Ml">Getränkemenge in ml <input id="rp29Ml" type="number" min="1" max="3000" step="10" inputmode="numeric" placeholder="z. B. 250"></label></div><div class="actions"><button class="primary" id="rp29Add" type="button">💧 Getränk hinzufügen</button><button class="soft" id="rp29Undo" type="button">Letzten Eintrag entfernen</button></div><p id="rp29Msg" class="tip" role="status" aria-live="polite"></p><div class="rp29-cards"><div class="rp29-card"><strong id="rp29Total">0 ml</strong><small>Am ausgewählten Tag eingetragen</small></div><div class="rp29-card"><strong id="rp29Count">0</strong><small>Getränke-Einträge an diesem Tag</small></div></div></section><section class="panel"><h2>📖 Letzte Tage</h2><div id="rp29History"></div><p class="tip">Nur auf diesem Gerät gespeichert. Es werden keine Trinkempfehlungen aus den Einträgen abgeleitet.</p></section>`;
+const $=id=>document.getElementById(id),date=$('rp29Date');date.value=today();
+function refresh(){const data=read(WATER_KEY),entries=Array.isArray(data[date.value])?data[date.value]:[],sum=entries.reduce((a,b)=>a+(Number(b)||0),0);$('rp29Total').textContent=nice(sum)+' ml';$('rp29Count').textContent=nice(entries.length);const hist=$('rp29History');hist.replaceChildren();const days=Object.entries(data).filter(([d,v])=>/^\d{4}-\d{2}-\d{2}$/.test(d)&&Array.isArray(v)&&v.length).sort((a,b)=>b[0].localeCompare(a[0])).slice(0,14);if(!days.length)hist.textContent='Noch keine Einträge.';for(const [d,items] of days){const row=document.createElement('p');row.textContent=d+' · '+nice(items.reduce((a,b)=>a+(Number(b)||0),0))+' ml ('+items.length+' Einträge)';hist.appendChild(row)}
+
+}
+function persist(data){try{localStorage.setItem(WATER_KEY,JSON.stringify(data));return true}catch{$('rp29Msg').textContent='Speichern fehlgeschlagen. Bitte Browserspeicher prüfen.';return false}}
+$('rp29Add').addEventListener('click',()=>{const n=Number($('rp29Ml').value);if(!/^\d{4}-\d{2}-\d{2}$/.test(date.value)||!Number.isInteger(n)||n<1||n>3000){$('rp29Msg').textContent='Bitte Datum und eine Menge von 1 bis 3000 ml eingeben.';return}const data=read(WATER_KEY);if(!Array.isArray(data[date.value]))data[date.value]=[];data[date.value].push(n);if(persist(data)){$('rp29Ml').value='';$('rp29Msg').textContent='✓ Getränk eingetragen.';refresh()}});
+$('rp29Undo').addEventListener('click',()=>{const data=read(WATER_KEY);if(!Array.isArray(data[date.value])||!data[date.value].length){$('rp29Msg').textContent='Keine Einträge zum Entfernen.';return}data[date.value].pop();if(!data[date.value].length)delete data[date.value];if(persist(data)){$('rp29Msg').textContent='Letzten Eintrag entfernt.';refresh()}});
+date.addEventListener('change',()=>{$('rp29Msg').textContent='';refresh()});document.addEventListener('visibilitychange',()=>{if(!document.hidden)refresh()});refresh();
+}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
+})();
+</script>
+<script id="rp310QuickNav">document.addEventListener('click',function(e){const tile=e.target.closest('[data-rp310-tab]');if(!tile)return;const target=tile.getAttribute('data-rp310-tab');let btn=document.querySelector('.tabnav [data-tab="'+target+'"]');if(!btn){btn=[...document.querySelectorAll('[data-tab]')].find(b=>b.getAttribute('data-tab')===target)}if(btn){btn.click();window.scrollTo({top:0,behavior:'smooth'})}else{const section=document.getElementById('tab-'+target);if(section){document.querySelectorAll('.tabpage').forEach(p=>p.hidden=p!==section);window.scrollTo(0,0)}else{alert('Dieser Bereich ist noch nicht verfügbar.')}}});</script><script id="rp320Organize">document.addEventListener('DOMContentLoaded',()=>{const overview=document.getElementById('tab-overview');if(!overview)return;const grid=overview.querySelector('.heroGrid');if(grid){const details=document.createElement('details');details.id='rp320Extra';const summary=document.createElement('summary');summary.textContent='📋 Weitere Details & Tages-Checkliste anzeigen';details.appendChild(summary);grid.parentNode.insertBefore(details,grid);details.appendChild(grid)}});</script><script id="rp340Script">
+(function(){
+ function ready(){
+  const input=document.getElementById('rp340Search');
+  const cards=Array.from(document.querySelectorAll('#tab-overview .rp330Card'));
+  if(input){input.addEventListener('input',function(){
+   const q=this.value.toLocaleLowerCase('de').trim();let shown=0;
+   cards.forEach(c=>{const match=!q||c.textContent.toLocaleLowerCase('de').includes(q);c.hidden=!match;c.style.display=match?'':'none';if(match)shown++;});
+   document.querySelectorAll('#tab-overview .rp330Label').forEach(label=>{const grid=label.nextElementSibling; if(grid&&grid.classList.contains('rp330Grid'))label.hidden=![...grid.querySelectorAll('.rp330Card')].some(c=>!c.hidden)});
+   const empty=document.getElementById('rp340SearchEmpty');if(empty)empty.hidden=shown!==0;
+  });}
+  document.querySelectorAll('.tabpage:not(#tab-overview)').forEach(page=>{
+   if(page.querySelector('.rp340Back'))return;
+   const back=document.createElement('button');back.type='button';back.className='rp340Back';back.textContent='← Zur Startseite';
+   back.addEventListener('click',()=>{const b=document.querySelector('.tabnav [data-tab="overview"]');if(b)b.click();window.scrollTo({top:0,behavior:'smooth'});});
+   page.insertBefore(back,page.firstChild);
+  });
+ }
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',ready);else ready();
+})();
+</script>
+<style id="rp350Style">
+#rp350Dock{display:none}#rp350Menu{display:none}
+@media(max-width:760px){
+ body{padding-bottom:86px!important}.tabnav{display:none!important}
+ #rp350Dock{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#09252b;border-top:1px solid #507477;padding:8px 4px max(8px,env(safe-area-inset-bottom));box-shadow:0 -8px 24px #0006}
+ #rp350Dock button{min-width:0;background:transparent;border:0;color:#e1f4ef;font:700 11px/1.25 system-ui;padding:5px 1px;border-radius:12px;display:flex;align-items:center;flex-direction:column;gap:3px}
+ #rp350Dock button span{font-size:22px}#rp350Dock button[aria-current="page"]{background:#205b5b;color:white}
+ #rp350Menu{display:block;position:fixed;inset:0;z-index:10000;background:#0009;padding:14px;overflow:auto}
+ #rp350Menu[hidden]{display:none}#rp350Menu .rp350Sheet{background:#102e35;border:1px solid #55797d;border-radius:20px;max-width:560px;margin:5vh auto;padding:18px;color:white}
+ #rp350Menu .rp350Links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+ #rp350Menu .rp350Links button{min-height:62px;text-align:left;padding:12px;background:#19444b;color:white;border:1px solid #527477;border-radius:13px;font-weight:750}
+ #rp350Menu .rp350Close{display:block;margin:0 0 14px auto;padding:9px 14px;border-radius:10px;background:#fff;color:#102e35;border:0;font-weight:800}
+ #tab-overview .rp330Welcome{padding:18px!important;margin-top:6px}#tab-overview .rp330Welcome h2{font-size:25px!important}
+}
+</style>
+<script id="rp350Nav">
+(function(){
+ const tabs=[['overview','🏠','Start'],['calendar','💪','Training'],['steps','👟','Schritte'],['water','💧','Wasser']];
+ function ready(){
+  if(document.getElementById('rp350Dock'))return;
+  const dock=document.createElement('nav');dock.id='rp350Dock';dock.setAttribute('aria-label','Hauptnavigation');
+  const menu=document.createElement('div');menu.id='rp350Menu';menu.hidden=true;
+  menu.innerHTML='<div class="rp350Sheet" role="dialog" aria-modal="true" aria-label="Alle Bereiche"><button type="button" class="rp350Close">✕ Schließen</button><h2>Alle Bereiche</h2><p>Wähle aus, was du machen möchtest.</p><div class="rp350Links"></div></div>';
+  document.body.append(dock,menu);
+  function go(tab){const btn=document.querySelector('.tabnav button[data-tab="'+tab+'"]');if(btn){btn.click();menu.hidden=true;window.scrollTo(0,0)}else alert('Bereich nicht verfügbar.');update()}
+  for(const [tab,icon,label] of tabs){const b=document.createElement('button');b.type='button';b.dataset.rp350=tab;b.innerHTML='<span aria-hidden="true">'+icon+'</span>'+label;b.addEventListener('click',()=>go(tab));dock.append(b)}
+  const more=document.createElement('button');more.type='button';more.innerHTML='<span aria-hidden="true">☰</span>Mehr';more.addEventListener('click',()=>{fillMenu();menu.hidden=false});dock.append(more);
+  menu.querySelector('.rp350Close').addEventListener('click',()=>menu.hidden=true);menu.addEventListener('click',e=>{if(e.target===menu)menu.hidden=true});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')menu.hidden=true});
+  const names={overview:'🏠 Startseite',calendar:'💪 Trainingsplan',steps:'👟 Schritte & Kilometer',water:'💧 Wassertracker',analytics:'📊 Statistiken',realcalendar:'🗓️ Kalender',rewards:'🎁 Belohnungen',goals:'🎯 Ziele',holidays:'🏖️ Ferien',videos:'🎬 Videos',profile:'👤 Profil',yearreview:'📅 Jahresrückblick'};
+  function fillMenu(){const box=menu.querySelector('.rp350Links');box.replaceChildren();document.querySelectorAll('.tabnav button[data-tab]').forEach(btn=>{const tab=btn.dataset.tab;const b=document.createElement('button');b.type='button';b.textContent=names[tab]||btn.textContent.trim();b.addEventListener('click',()=>go(tab));box.append(b)})}
+  function update(){const active=document.querySelector('.tabnav button.active')?.dataset.tab||'overview';dock.querySelectorAll('button[data-rp350]').forEach(b=>{if(b.dataset.rp350===active)b.setAttribute('aria-current','page');else b.removeAttribute('aria-current')})}
+  document.addEventListener('click',e=>{if(e.target.closest('.tabnav button,[data-rp310-tab]'))setTimeout(update,60)});update();
+ }
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',ready);else ready();
+})();
+</script>
+<script id="rp360Dashboard">(function(){
+function init(){
+ const page=document.getElementById('tab-overview');if(!page||document.getElementById('rp360Home'))return;
+ const home=document.createElement('div');home.id='rp360Home';
+ const primary=[['calendar','💪','Training','Deinen Trainingsplan und Videos öffnen'],['steps','👟','Schritte','Schritte eintragen und Kilometer sehen'],['water','💧','Wasser','Getränke einfach dokumentieren'],['analytics','📊','Statistiken','Deine Fortschritte ansehen']];
+ const other=[['achievements','🏆','Erfolge','Deine Abzeichen'],['goals','🎯','Ziele','Eigene Vorhaben'],['realcalendar','🗓️','Kalender','Alle Termine'],['rewards','🎁','Belohnungen','Deine Belohnungen'],['holidays','🏖️','Ferien','Freie Tage'],['settings','⚙️','Einstellungen','Design und Daten']];
+ function makeTile([tab,icon,name,desc],main){const b=document.createElement('button');b.type='button';b.className='rp36Tile'+(main?' rp36Main':'');b.dataset.rp36Tab=tab;const emoji=document.createElement('span');emoji.className='rp36Emoji';emoji.textContent=icon;const strong=document.createElement('strong');strong.textContent=name;const sub=document.createElement('span');sub.textContent=desc;b.append(emoji,strong,sub);return b}
+ const intro=document.createElement('div');intro.className='rp36Intro';intro.innerHTML='<small>👑 ROYALPULSE 3.6</small><h2>Was möchtest du heute machen?</h2><p>Wähle einfach einen Bereich aus. Alles Wichtige findest du hier.</p>';
+ const heading=document.createElement('h3');heading.className='rp36Heading';heading.textContent='⭐ Häufig genutzt';const grid=document.createElement('div');grid.className='rp36Grid';primary.forEach(x=>grid.append(makeTile(x,true)));
+ const heading2=document.createElement('h3');heading2.className='rp36Heading';heading2.textContent='🧭 Weitere Bereiche';const secondary=document.createElement('div');secondary.className='rp36Secondary';other.forEach(x=>secondary.append(makeTile(x,false)));
+ const details=document.createElement('details');details.className='rp36Details';const summary=document.createElement('summary');summary.textContent='📋 Ausführliche Übersicht & bisherige Startseite';details.append(summary);
+ const legacy=document.createElement('div');legacy.id='rp360Legacy';while(page.firstChild)legacy.append(page.firstChild);details.append(legacy);home.append(intro,heading,grid,heading2,secondary,details);page.append(home);
+ home.addEventListener('click',e=>{const b=e.target.closest('[data-rp36-tab]');if(!b)return;const tab=b.dataset.rp36Tab;const original=document.querySelector('.tabnav button[data-tab="'+tab+'"]');if(original){original.click();window.scrollTo({top:0,behavior:'instant'})}else{const alt=document.querySelector('[data-jump="'+tab+'"]');if(alt)alt.click();else alert('Dieser Bereich ist gerade nicht verfügbar.')}});
+}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+})();</script></body></html>
