@@ -343,7 +343,7 @@ document.addEventListener('visibilitychange',()=>{if(document.visibilityState===
 <p class="tip">Die Mini-Checkliste wird täglich neu angezeigt und ist freiwillig.</p>
 </section></div>
 </div><div class="tabpage" id="tab-analytics" hidden>
-<section class="panel rp-analytics-head"><div class="kicker">ROYALPULSE INSIGHTS · 2.5.0</div><h2>📊 Deine Trainingsstatistiken</h2><p class="tip">Deine Fortschritte im eigenen Tempo. Die Auswertung nutzt ausschließlich die auf diesem Gerät gespeicherten Trainings-Häkchen.</p><div class="rp-stat-cards"><div><strong id="rpTotal">0</strong><span>Abgeschlossene Tage</span></div><div><strong id="rpPercent">0 %</strong><span>365-Tage-Fortschritt</span></div><div><strong id="rpWeeks">0</strong><span>Vollständige Wochen</span></div><div><strong id="rpRest">365</strong><span>Noch offene Tage</span></div></div></section>
+<section class="panel rp-analytics-head"><div class="kicker">ROYALPULSE INSIGHTS · 2.5.2</div><h2>📊 Deine Trainingsstatistiken</h2><p class="tip">Deine Fortschritte im eigenen Tempo. Die Auswertung nutzt ausschließlich die auf diesem Gerät gespeicherten Trainings-Häkchen.</p><div class="rp-stat-cards"><div><strong id="rpTotal">0</strong><span>Abgeschlossene Tage</span></div><div><strong id="rpPercent">0 %</strong><span>365-Tage-Fortschritt</span></div><div><strong id="rpWeeks">0</strong><span>Vollständige Wochen</span></div><div><strong id="rpRest">365</strong><span>Noch offene Tage</span></div></div></section>
 <section class="panel"><div class="rp-chart-heading"><div><div class="kicker">WOCHENÜBERSICHT</div><h2>📈 Fortschritt nach Wochen</h2></div><span class="rp-chart-note">Abgeschlossene Tage je 7-Tage-Block</span></div><div id="rpWeeklyChart" class="rp-week-chart" role="img" aria-label="Balkendiagramm: Abgeschlossene Trainingstage je Woche"></div><p class="tip">Die Balken zeigen deine Trainings-Häkchen im 365-Tage-Plan, nicht automatisch erfasste Aktivität.</p></section>
 <section class="panel"><div class="kicker">DEIN JAHR</div><h2>✨ 12 Etappen im Überblick</h2><div id="rpStages" class="rp-stages"></div><p class="tip">Jede Etappe umfasst 30 Trainingstage; die letzte Etappe umfasst 35 Tage. Es sind keine Kalendermonate.</p></section>
 <section class="panel"><div class="kicker">DEIN WEG</div><h2>👑 Kleine Schritte zählen</h2><p id="rpEncouragement" class="tip">Deine Auswertung wird geladen.</p><div class="actions"><button type="button" class="soft" id="rpRefreshStats">↻ Statistiken aktualisieren</button><button type="button" class="soft" data-jump="calendar">📅 Zum Trainingsplan</button></div></section>
@@ -386,7 +386,7 @@ document.addEventListener('visibilitychange',()=>{if(document.visibilityState===
 <section class="panel notice"><h2>🛡️ Sicher trainieren</h2><p class="tip">Der Tracker ist eine persönliche Zusammenstellung, kein offizieller Plan von Oliver Sjöström. Du bist noch im Wachstum: Ziel sind Fitness, Kraft und gute Gewohnheiten – keine Crash-Diät. Besprich den Plan mit einem Elternteil/Erziehungsberechtigten. Pausiere bei Schmerzen, Schwindel oder Übelkeit. Passe intensive Videos an und mache Pausen.</p></section>
 </div></div>
 </main>
-<footer>Externe Videos werden auf YouTube geöffnet und können sich ändern. Häkchen bleiben lokal in diesem Browser; andere Personen mit Zugriff auf dein Gerät könnten sie sehen. Sicherung exportieren, wenn du deinen Fortschritt behalten möchtest. <br><a href="https://www.youtube.com/@oliversjostrom" target="_blank" rel="noopener">Oliver Sjöström – YouTube-Kanal</a><div class="legend-footer-version" aria-label="App-Version">Version 2.5.0</div></footer>
+<footer>Externe Videos werden auf YouTube geöffnet und können sich ändern. Häkchen bleiben lokal in diesem Browser; andere Personen mit Zugriff auf dein Gerät könnten sie sehen. Sicherung exportieren, wenn du deinen Fortschritt behalten möchtest. <br><a href="https://www.youtube.com/@oliversjostrom" target="_blank" rel="noopener">Oliver Sjöström – YouTube-Kanal</a><div class="legend-footer-version" aria-label="App-Version">Version 2.5.2</div></footer>
 <script>
 const vids={
  chest:["Brust, Schultern & Bauch – 30 Min","https://www.youtube.com/watch?v=Sv_2w3v1N_k"],
@@ -401,13 +401,13 @@ const sundayChoices=[
  ['Anfängerfreundliche Workouts – Oliver Sjöström','https://www.youtube.com/@oliversjostrom/search?query=beginner'],
  ['Ganzkörper-Workouts – Oliver Sjöström','https://www.youtube.com/@oliversjostrom/search?query=full%20body']
 ];
-const tuesdayChoices=[['▶ Oliver Sjöström – Low Impact','https://www.youtube.com/@oliversjostrom/search?query=low%20impact']];
-const thursdayChoices=[['▶ Oliver Sjöström – Stretching & Mobility','https://www.youtube.com/@oliversjostrom/search?query=stretch']];
+const tuesdayChoices=[['▶ Oliver Sjöström – Ganzkörper-Workout (anspruchsvoll)','https://www.youtube.com/@oliversjostrom/search?query=full%20body%20workout'],['▶ Oliver Sjöström – Cardio-Workout (anspruchsvoll)','https://www.youtube.com/@oliversjostrom/search?query=cardio%20workout']];
+const thursdayChoices=[['▶ Oliver Sjöström – Kraft & Cardio (anspruchsvoll)','https://www.youtube.com/@oliversjostrom/search?query=strength%20cardio%20workout'],['▶ Oliver Sjöström – Ganzkörpertraining','https://www.youtube.com/@oliversjostrom/search?query=full%20body%20workout']];
 const weekPattern=[
 ["KRAFT","Brust, Schultern & Bauch","Nutze leichtere Varianten und Pausen.","chest","Video ansehen und angepasst mitmachen","bis zu 30 Min · bei Bedarf kürzer"],
-["LEICHT","Dienstag: Oliver & lockere Bewegung","Wähle ein sanftes Oliver-Sjöström-Video oder einen Spaziergang.","","10–20 Minuten lockere Bewegung","ohne Leistungsdruck"],
+["GANZKÖRPER","Dienstag: Anspruchsvolles Oliver-Workout","Wähle ein forderndes Ganzkörper- oder Cardio-Workout. Wärme dich auf, passe Übungen an und mache Pausen.","","Anspruchsvolles Training mit Pausen","ca. 15–25 Min · nach Tagesform"],
 ["CARDIO","Cardio ohne Springen","Bleib bei der low-impact Variante.","low","Video starten und Pausen machen","bis zu 20 Min · nach Gefühl"],
-["ERHOLUNG","Donnerstag: Erholung & Oliver-Auswahl","Ruhetag mit freiwilligem sanftem Video von Oliver Sjöström.","","Erholen, normal essen und schlafen","kein Workout nötig"],
+["KRAFT & CARDIO","Donnerstag: Anspruchsvolles Oliver-Workout","Wähle ein forderndes Kraft- und Cardio-Workout. Wenn du erschöpft bist, tausche es gegen Erholung.","","Anspruchsvolles Training mit Pausen","ca. 15–25 Min · Erholung möglich"],
 ["GANZKÖRPER","Workout-Auswahl","Wähle ein passendes Video vom Kanal; du musst nicht alles schaffen.","channel","Kurze, angepasste Einheit","10–20 Min reichen"],
 ["CARDIO","Cardio nach Gefühl","Wenn du müde bist, geh spazieren statt HIIT zu machen.","cardio","Leichte Version oder Spaziergang","10–20 Min · nicht maximal"],
 ["ERHOLUNG","Sonntag: Erholung & Oliver-Auswahl","Sonntag bleibt ein Ruhetag. Wenn du möchtest, schau dir ein leichtes Video an; du musst nicht trainieren.","","Ruhetag und entspannt in die nächste Woche starten","kein Workout nötig"]
@@ -422,7 +422,7 @@ function renderAchievements(count){let xp=count*20,level=Math.floor(xp/200)+1,wi
 function updateStats(){renderHeatmap();renderMonths();let count=Array.from({length:365},(_,i)=>i+1).filter(n=>state[n]===true).length;renderAchievements(count);document.getElementById("doneCount").textContent=count;document.getElementById("pct").textContent=Math.round(count/365*100)+"%";document.getElementById("bar").style.width=count/365*100+"%";let weeksDone=0;for(let w=1;w<=52;w++){let a=(w-1)*7+1,b=w*7;if(Array.from({length:b-a+1},(_,i)=>a+i).every(n=>state[n]))weeksDone++}if(Array.from({length:1},(_,i)=>365+i).every(n=>state[n]))weeksDone++;document.getElementById("weekCount").textContent=weeksDone+"/53";let next=Array.from({length:365},(_,i)=>i+1).find(n=>!state[n]);document.getElementById("nextTitle").textContent=next?"Tag "+next+" wartet auf dich":"Alle 365 Tage abgehakt! 🎉";document.getElementById("nextText").textContent=next?"Dein nächster offener Tag: "+dData(next).name+". Geh in deinem Tempo.":"Stark drangeblieben! Jetzt geht es darum, gute Gewohnheiten beizubehalten."}
 function toggle(n){if(state[n])delete state[n];else state[n]=true;save();renderDays()}
 function renderWeeks(){weeksEl.innerHTML="";for(let w=1;w<=53;w++){let b=document.createElement("button");b.textContent=w===53?"Tag 365":"Woche "+w;b.className=w===week?"active":"";b.onclick=()=>{week=w;renderWeeks();renderDays()};weeksEl.appendChild(b)}}
-function renderDays(){daysEl.innerHTML="";let start=(week-1)*7+1,end=Math.min(365,week*7);for(let n=start;n<=end;n++){let d=dData(n),done=!!state[n],el=document.createElement("article");el.className="day"+(done?" done":"");el.id="day"+n;let link=d.video?`<a class="video" href="${vids[d.video][1]}" target="_blank" rel="noopener">▶ ${vids[d.video][0]}</a>`:"";if(n%7===2 || n%7===4){let choices=n%7===2?tuesdayChoices:thursdayChoices;link+=`<div class="sundayChoices"><strong>▶ Oliver-Sjöström-Video (${n%7===2?'Dienstag':'Donnerstag'})</strong><p>Videoauswahl auf Olivers Kanal. Sanfte Bewegung ist freiwillig, besonders am Donnerstag.</p>${choices.map(([title,url])=>`<a href="${url}" target="_blank" rel="noopener">${title}</a>`).join('')}</div>`;}if(n%7===0){link+=`<div class="sundayChoices"><strong>☀️ Sonntags-Auswahl (freiwillig)</strong><p>Entdecke weitere Videos auf Olivers Kanal. Du kannst auch einfach pausieren.</p>${sundayChoices.map(([title,url])=>`<a href="${url}" target="_blank" rel="noopener">▶ ${title}</a>`).join('')}</div>`;}el.innerHTML=`<div class="daytop"><div class="number">${done?"✓":String(n).padStart(2,"0")}</div><div><div class="tag">${d.type} · WOCHE ${d.week}</div><h3>TAG ${n}: ${d.name}</h3><div class="sub">${d.time}</div></div></div><p>${d.desc}</p>${link}<label class="task"><input type="checkbox" ${done?"checked":""} aria-label="Tag ${n} erledigt"><span><strong>${d.task}</strong><small>Einmal antippen, wenn fertig.</small></span></label><button class="finish">${done?"✓ ERLEDIGT – zum Rückgängigmachen tippen":"☐ TAG ABHAKEN"}</button>`;el.querySelector("input").onchange=()=>toggle(n);el.querySelector(".finish").onclick=()=>toggle(n);daysEl.appendChild(el)}updateStats()}
+function renderDays(){daysEl.innerHTML="";let start=(week-1)*7+1,end=Math.min(365,week*7);for(let n=start;n<=end;n++){let d=dData(n),done=!!state[n],el=document.createElement("article");el.className="day"+(done?" done":"");el.id="day"+n;let link=d.video?`<a class="video" href="${vids[d.video][1]}" target="_blank" rel="noopener">▶ ${vids[d.video][0]}</a>`:"";if(n%7===2 || n%7===4){let choices=n%7===2?tuesdayChoices:thursdayChoices;link+=`<div class="sundayChoices"><strong>▶ Oliver-Sjöström-Video (${n%7===2?'Dienstag':'Donnerstag'})</strong><p>Anspruchsvollere Workouts als Kanalsuche; wähle ein passendes Video, mache Pausen und trainiere nicht bei Schmerzen.</p>${choices.map(([title,url])=>`<a href="${url}" target="_blank" rel="noopener">${title}</a>`).join('')}</div>`;}if(n%7===0){link+=`<div class="sundayChoices"><strong>☀️ Sonntags-Auswahl (freiwillig)</strong><p>Entdecke weitere Videos auf Olivers Kanal. Du kannst auch einfach pausieren.</p>${sundayChoices.map(([title,url])=>`<a href="${url}" target="_blank" rel="noopener">▶ ${title}</a>`).join('')}</div>`;}el.innerHTML=`<div class="daytop"><div class="number">${done?"✓":String(n).padStart(2,"0")}</div><div><div class="tag">${d.type} · WOCHE ${d.week}</div><h3>TAG ${n}: ${d.name}</h3><div class="sub">${d.time}</div></div></div><p>${d.desc}</p>${link}<label class="task"><input type="checkbox" ${done?"checked":""} aria-label="Tag ${n} erledigt"><span><strong>${d.task}</strong><small>Einmal antippen, wenn fertig.</small></span></label><button class="finish">${done?"✓ ERLEDIGT – zum Rückgängigmachen tippen":"☐ TAG ABHAKEN"}</button>`;el.querySelector("input").onchange=()=>toggle(n);el.querySelector(".finish").onclick=()=>toggle(n);daysEl.appendChild(el)}updateStats()}
 function selectTab(tab){if(tab==='statistics')tab='analytics';document.querySelectorAll(".tabpage[id^=tab-]").forEach(el=>{if(el.id!=="tab-info")el.hidden=el.id!=="tab-"+tab});document.querySelectorAll(".tabnav button").forEach(b=>b.classList.toggle("active",b.dataset.tab===tab));document.getElementById("tab-info").hidden=tab!=="overview";window.scrollTo({top:0,behavior:"smooth"})}
 document.querySelectorAll(".tabnav button").forEach(b=>b.addEventListener("click",()=>selectTab(b.dataset.tab)));document.getElementById('settingsGear').addEventListener('click',()=>selectTab('settings'));document.querySelectorAll("[data-jump]").forEach(b=>b.addEventListener("click",()=>selectTab(b.dataset.jump)));
 function goTo(n){selectTab("calendar");week=Math.ceil(n/7);renderWeeks();renderDays();document.getElementById("day"+n)?.scrollIntoView({behavior:"smooth",block:"center"})}
@@ -489,7 +489,7 @@ const level=()=>Math.min(100,1+Math.floor(xp()/55));
 let calOffset=0;
 function calendar(){const base=dateAt(1),first=new Date(base.getFullYear(),base.getMonth()+calOffset,1),end=new Date(first.getFullYear(),first.getMonth()+1,0).getDate(),shift=(first.getDay()+6)%7;document.getElementById('calTitle').textContent=first.toLocaleDateString('de-DE',{month:'long',year:'numeric'});const box=document.getElementById('realCal');box.replaceChildren();['Mo','Di','Mi','Do','Fr','Sa','So'].forEach(x=>{let e=document.createElement('strong');e.textContent=x;box.append(e)});for(let j=0;j<shift;j++){let e=document.createElement('span');box.append(e)}for(let d=1;d<=end;d++){let dt=new Date(first.getFullYear(),first.getMonth(),d),n=dayNumber(dt),b=document.createElement('button');b.textContent=String(d);if(n<1||n>365)b.classList.add('outside');else{let sm=document.createElement('small');sm.textContent='Tag '+n;b.append(sm);if(state[n])b.classList.add('complete');b.onclick=()=>goTo(n)}if(iso(dt)===iso(today))b.classList.add('today');box.append(b)}}
 document.getElementById('prevCal').onclick=()=>{calOffset--;calendar()};document.getElementById('nextCal').onclick=()=>{calOffset++;calendar()};
-const library=[['Brust, Schultern & Bauch','Direktes Video',vids.chest[1]],['Cardio ohne Springen','Direktes Video',vids.low[1]],['Cardio HIIT','Direktes Video – nur angepasst',vids.cardio[1]],['Dienstag · Low Impact','Suche auf Olivers Kanal',tuesdayChoices[0][1]],['Donnerstag · Stretching','Suche auf Olivers Kanal',thursdayChoices[0][1]],...sundayChoices.map(v=>[v[0],'Freiwillige Sonntags-Auswahl',v[1]]),['Ganzkörper','Kanalsuche','https://www.youtube.com/@oliversjostrom/search?query=full%20body'],['Mobility','Kanalsuche','https://www.youtube.com/@oliversjostrom/search?query=mobility']];
+const library=[['Brust, Schultern & Bauch','Direktes Video',vids.chest[1]],['Cardio ohne Springen','Direktes Video',vids.low[1]],['Cardio HIIT','Direktes Video – nur angepasst',vids.cardio[1]],['Dienstag · Anspruchsvolles Ganzkörpertraining','Suche auf Olivers Kanal',tuesdayChoices[0][1]],['Donnerstag · Anspruchsvolles Kraft & Cardio','Suche auf Olivers Kanal',thursdayChoices[0][1]],...sundayChoices.map(v=>[v[0],'Freiwillige Sonntags-Auswahl',v[1]]),['Ganzkörper','Kanalsuche','https://www.youtube.com/@oliversjostrom/search?query=full%20body'],['Mobility','Kanalsuche','https://www.youtube.com/@oliversjostrom/search?query=mobility']];
 const vl=document.getElementById('videoLibrary');library.forEach(([title,desc,url])=>{const e=document.createElement('div');e.className='mini-card video-list';const h=document.createElement('h3');h.textContent=title;const p=document.createElement('p');p.className='tip';p.textContent=desc;const a=document.createElement('a');a.href=url;a.target='_blank';a.rel='noopener noreferrer';a.textContent='▶ Auf YouTube öffnen';e.append(h,p,a);vl.append(e)});
 const achievementList=Array.from({length:100},(_,i)=>{const n=i+1;let threshold=n<=60?Math.ceil(n*365/60):365;return {n,threshold,name:n%10===0?'LEGEND Meilenstein '+n:n%5===0?'Sternen-Erfolg '+n:'Erfolg '+String(n).padStart(3,'0'),kind:n<=60?'Tage':'Missionen',need:n<=60?threshold:Math.ceil((n-60)*270/40)}});
 const badgeSection=document.getElementById('tab-achievements');const badgePanel=document.createElement('section');badgePanel.className='panel';badgePanel.innerHTML='<h2>💎 100 LEGEND-Erfolge</h2><p class="tip">60 Meilensteine für markierte Tage und 40 für freiwillige Tagesmissionen. Auch Ruhetage zählen.</p><div class="extra-grid"><div class="mini-card"><h3 id="ultraLevel">Level 1 / 100</h3><div class="progress-track"><span id="ultraLevelBar"></span></div><p id="ultraXp" class="tip"></p></div><div class="mini-card"><h3 id="ultraBadgeCount">0 / 100</h3><p class="tip">Freigeschaltete Erfolge</p></div></div><div id="hundredBadges" class="achievement100" style="margin-top:14px"></div>';badgeSection.append(badgePanel);badgeSection.insertAdjacentHTML('beforeend','<section class="panel"><div class="kicker">DEINE SAMMLUNG</div><h2>🏅 LEGEND Trophäenraum</h2><p class="tip">Deine 100 LEGEND-Abzeichen auf einen Blick. Auch Ruhetage zählen.</p><div id="royalTrophies" class="royal-grid"></div></section>');
@@ -597,7 +597,7 @@ function playRoyalIntro(force=false){
  intro.querySelector('button').addEventListener('click',()=>{intro.remove();closing=true});
  setTimeout(close,4600);
 }
-/* Startanimation in Version 2.5.0 deaktiviert. */
+/* Startanimation in Version 2.5.2 deaktiviert. */
 const settingsPage=document.getElementById('tab-settings');
 /* Startanimation-Button entfernt. */
 })();
@@ -818,7 +818,7 @@ file?.addEventListener('change',async()=>{
 </script><script>
 (function(){
 'use strict';
-const APP_VERSION='2.5.0';
+const APP_VERSION='2.5.2';
 const $=id=>document.getElementById(id);
 const status=$('legendUpdateStatus');
 const button=$('legendApplyUpdate');
@@ -1276,7 +1276,7 @@ document.getElementById('rpRefreshStats')?.addEventListener('click',draw);
 document.querySelector('[data-tab="analytics"]')?.addEventListener('click',()=>setTimeout(draw,0));
 document.addEventListener('change',e=>{if(e.target?.closest?.('#tab-calendar'))setTimeout(draw,0)});
 window.addEventListener('storage',draw);draw();
-})();</script><button id="rpCloudBtn" type="button">☁️ Konto & Sicherung</button><section id="rpCloudPanel" role="dialog" aria-modal="true" aria-labelledby="rpCloudTitle"><div id="rpCloudCard"><button id="rpCloudClose" aria-label="Schließen">✕</button><h2 id="rpCloudTitle">👑 RoyalPulse Konto</h2><p id="rpCloudUser">Nicht angemeldet</p><button id="rpGoogle">Mit Google anmelden</button><button id="rpApple">Mit Apple anmelden</button><button id="rpUpload" disabled>☁️ Meine Daten sichern</button><button id="rpDownload" disabled>⬇️ Cloud-Daten wiederherstellen</button><button id="rpLogout" disabled>Abmelden</button><div id="rpCloudStatus" role="status"></div><small>Cloud-Sicherung nur nach Einrichtung von Firebase. Daten bleiben bis dahin lokal gespeichert. Nutze dieselbe Anmeldemethode auf deinen Geräten. Eine Wiederherstellung ersetzt die lokalen Trainingsdaten erst nach Bestätigung.</small></div></section><script src="./firebase-config.js"></script><script type="module" src="./royal-cloud.js"></script><script id="royal250Script">
+})();</script><button id="rpCloudBtn" type="button" hidden aria-hidden="true" tabindex="-1">☁️ Konto & Sicherung</button><section id="rpCloudPanel" role="dialog" aria-modal="true" aria-labelledby="rpCloudTitle"><div id="rpCloudCard"><button id="rpCloudClose" aria-label="Schließen">✕</button><h2 id="rpCloudTitle">👑 RoyalPulse Konto</h2><p id="rpCloudUser">Nicht angemeldet</p><button id="rpGoogle">Mit Google anmelden</button><button id="rpApple">Mit Apple anmelden</button><button id="rpUpload" disabled>☁️ Meine Daten sichern</button><button id="rpDownload" disabled>⬇️ Cloud-Daten wiederherstellen</button><button id="rpLogout" disabled>Abmelden</button><div id="rpCloudStatus" role="status"></div><small>Cloud-Sicherung nur nach Einrichtung von Firebase. Daten bleiben bis dahin lokal gespeichert. Nutze dieselbe Anmeldemethode auf deinen Geräten. Eine Wiederherstellung ersetzt die lokalen Trainingsdaten erst nach Bestätigung.</small></div></section><script src="./firebase-config.js"></script><script type="module" src="./royal-cloud.js"></script><script id="royal250Script">
 (()=>{'use strict';
 const K='harbaaj_royal_250_profile',T='harbaaj_royal_250_theme';
 const get=(k,f)=>{try{return JSON.parse(localStorage.getItem(k))??f}catch{return f}};
@@ -1296,4 +1296,60 @@ const status=panel.querySelector('#rp250Offline');const network=()=>{status.text
 const saved=get(T,'blackgold');if(themes.some(t=>t[0]===saved))document.body.dataset.rp250Theme=saved;
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',setup);else setup();
 })();
-</script></body></html>
+</script>
+<style id="rp251Styles">
+#rpCloudBtn,#rpCloudPanel{display:none!important}
+#rp251Notice{margin-top:12px;padding:12px;border:1px solid var(--line);border-radius:12px;background:var(--panel2)}
+#rp251Notice button{margin-top:8px}
+</style>
+<script id="rp251Fixes">
+(function(){
+'use strict';
+function init(){
+ const $=id=>document.getElementById(id);
+ // The 4 premium themes no longer override the original 50 color options.
+ const premium=$('rp250Panel');
+ document.querySelectorAll('.themeChoice').forEach(btn=>btn.addEventListener('click',()=>{
+   document.body.removeAttribute('data-rp250-theme');
+   try{localStorage.removeItem('harbaaj_royal_250_theme')}catch(e){}
+   if(premium)premium.querySelectorAll('[data-theme250]').forEach(b=>b.setAttribute('aria-pressed','false'));
+ },true));
+ if(premium)premium.querySelectorAll('[data-theme250]').forEach(btn=>btn.addEventListener('click',()=>{
+   // Clear inline custom colors from the old 50-theme picker before applying premium theme.
+   ['--bg','--panel','--panel2','--mint','--line','--white','--muted'].forEach(k=>document.body.style.removeProperty(k));
+ },true));
+ // One calendar tab: keep both calendar views and their original element IDs/events.
+ const plan=$('tab-calendar'),annual=$('tab-realcalendar');
+ if(plan&&annual){
+   const heading=document.createElement('h2');heading.textContent='🗓️ Jahreskalender';heading.style.marginTop='26px';
+   plan.append(heading);
+   while(annual.firstChild)plan.appendChild(annual.firstChild);
+   annual.remove();
+   document.querySelectorAll('[data-tab="realcalendar"]').forEach(b=>b.remove());
+   // Existing navigation links point to the combined calendar.
+   document.querySelectorAll('[data-link="realcalendar"],[data-target="realcalendar"]').forEach(b=>{b.dataset.link='calendar';b.dataset.target='calendar'});
+   const nav=document.querySelector('[data-tab="calendar"]');if(nav)nav.textContent='📅 Kalender & Jahreskalender';
+ }
+ // Keep local backups in settings, remove only the unfinished cloud account UI.
+ const cloud=$('rpCloudBtn');if(cloud)cloud.remove();
+ const cloudPanel=$('rpCloudPanel');if(cloudPanel)cloudPanel.remove();
+ // Improve reminder UX, but do not claim background push on iOS or closed browsers.
+ const rem=$('v23ReminderStatus'),ask=$('v23AskNotification'),on=$('v23ReminderOn');
+ if(rem&&ask&&on){
+   const info=document.createElement('div');info.id='rp251Notice';
+   info.innerHTML='<strong>🔔 Erinnerungs-Test</strong><p>Erinnerungen funktionieren bei geöffneter App. Wenn der Browser geschlossen ist, sind sie nicht zuverlässig.</p><button type="button" class="soft" id="rp251TestReminder">🔔 Test-Erinnerung senden</button>';
+   rem.insertAdjacentElement('afterend',info);
+   $('rp251TestReminder').onclick=()=>{
+     if(!('Notification' in window)){rem.textContent='Dein Browser unterstützt hier keine Systembenachrichtigungen.';return}
+     if(Notification.permission!=='granted'){rem.textContent='Bitte zuerst „Benachrichtigungen erlauben“ wählen.';return}
+     try{new Notification('👑 RoyalPulse', {body:'Test erfolgreich! Zeit für Bewegung oder eine Pause.'});rem.textContent='Test-Benachrichtigung gesendet.'}
+     catch(e){rem.textContent='Benachrichtigung konnte nicht angezeigt werden: '+e.message}
+   };
+ }
+ // Rename built-in, fully offline synthesized music player for clarity.
+ const music=$('legendMusicPanel');if(music){const h=music.querySelector('h2');if(h)h.textContent='🎵 Royal Music – integrierte Musik';}
+}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
+})();
+</script>
+</body></html>
