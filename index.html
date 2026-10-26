@@ -349,7 +349,7 @@ button{cursor:pointer;transition:filter .15s,transform .15s}button:hover{filter:
 .rp-overview-intro a{color:var(--mint);font-weight:700}
 @media(max-width:650px){header{margin:9px 10px 0!important;padding:20px 17px!important;border-radius:19px}header .lead{font-size:.88rem}main{padding:10px 10px 60px!important}.tabnav{padding:9px 62px 9px 9px!important;border-radius:14px}.tabnav button{font-size:.84rem!important;padding:9px 12px!important}.panel{padding:16px!important;border-radius:16px!important}.stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.rp-overview-intro{padding:14px}}
 </style>
-<body><div id="appLock" hidden><div class="lock-inner"><div style="font-size:3rem">👑</div><h2>RoyalPulse</h2><p>App gesperrt. Gib deinen PIN ein.</p><input id="unlockPin" type="password" inputmode="numeric" maxlength="8" placeholder="PIN" aria-label="App-PIN"><button class="primary" id="unlockBtn">Entsperren</button><p id="unlockFeedback" role="alert"></p></div></div><div id="certPrint"></div><script>
+<body><div id="appLock" hidden><div class="lock-inner"><div style="font-size:3rem">👑</div><h2>RoyalPulse</h2><p>App gesperrt. Gib deinen PIN ein – die App öffnet sich automatisch.</p><input id="unlockPin" type="password" inputmode="numeric" maxlength="8" placeholder="PIN" aria-label="App-PIN"><button class="primary" id="unlockBtn" hidden>Entsperren</button><p id="unlockFeedback" role="alert"></p></div></div><div id="certPrint"></div><script>
 /* Standalone PIN controller: runs even when other app modules have a runtime error.
    This is a UI lock, not encryption. Never sends the PIN anywhere. */
 (function(){
@@ -412,6 +412,20 @@ function setup(){
   lock();
  });
  el('unlockBtn').addEventListener('click',unlock);
+ // Automatisch entsperren, sobald die vollständig eingegebene PIN stimmt.
+ // Die gespeicherte PIN kann 4 bis 8 Ziffern haben; ihre Länge wird nicht gespeichert.
+ el('unlockPin').addEventListener('input',()=>{
+  const field=el('unlockPin');
+  field.value=field.value.replace(/\D/g,'').slice(0,8);
+  const pin=field.value;
+  el('unlockFeedback').textContent='';
+  if(pin.length>=4 && hash(pin)===readPin()){
+   unlock();
+  }else if(pin.length===8){
+   el('unlockFeedback').textContent='PIN stimmt nicht. Bitte erneut versuchen.';
+   field.value='';
+  }
+ });
  el('unlockPin').addEventListener('keydown',e=>{if(e.key==='Enter')unlock()});
  updateStatus();
  if(readPin())lock();
@@ -494,7 +508,7 @@ document.addEventListener('visibilitychange',()=>{if(document.visibilityState===
 <section class="panel notice"><h2>🛡️ Sicher trainieren</h2><p class="tip">Der Tracker ist eine persönliche Zusammenstellung, kein offizieller Plan von Oliver Sjöström. Du bist noch im Wachstum: Ziel sind Fitness, Kraft und gute Gewohnheiten – keine Crash-Diät. Besprich den Plan mit einem Elternteil/Erziehungsberechtigten. Pausiere bei Schmerzen, Schwindel oder Übelkeit. Passe intensive Videos an und mache Pausen.</p></section>
 </div></div>
 </main>
-<footer>Trainingsvideos lassen sich im Trainingsplan abspielen; beim Start wird eine Verbindung zu YouTube hergestellt. Videos können extern gesperrt sein oder sich ändern. Häkchen bleiben lokal in diesem Browser; andere Personen mit Zugriff auf dein Gerät könnten sie sehen. Sicherung exportieren, wenn du deinen Fortschritt behalten möchtest. <br><a href="https://www.youtube.com/@oliversjostrom" target="_blank" rel="noopener">Oliver Sjöström – YouTube-Kanal</a><div class="legend-footer-version" aria-label="App-Version">Version 3.3.0</div></footer>
+<footer>Trainingsvideos lassen sich im Trainingsplan abspielen; beim Start wird eine Verbindung zu YouTube hergestellt. Videos können extern gesperrt sein oder sich ändern. Häkchen bleiben lokal in diesem Browser; andere Personen mit Zugriff auf dein Gerät könnten sie sehen. Sicherung exportieren, wenn du deinen Fortschritt behalten möchtest. <br><a href="https://www.youtube.com/@oliversjostrom" target="_blank" rel="noopener">Oliver Sjöström – YouTube-Kanal</a><div class="legend-footer-version" aria-label="App-Version">Version 4.0.2</div></footer>
 <script>
 const vids={
  chest:["Brust, Schultern & Bauch – 30 Min","https://www.youtube.com/watch?v=Sv_2w3v1N_k"],
@@ -978,7 +992,7 @@ file?.addEventListener('change',async()=>{
 </script><script>
 (function(){
 'use strict';
-const APP_VERSION='3.2.0';
+const APP_VERSION='4.0.2';
 const $=id=>document.getElementById(id);
 const status=$('legendUpdateStatus');
 const button=$('legendApplyUpdate');
@@ -1649,6 +1663,18 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
  #tab-overview .rp330Welcome{padding:18px!important;margin-top:6px}#tab-overview .rp330Welcome h2{font-size:25px!important}
 }
 </style>
+<style id="rp402TileMenuStyle">
+@media(max-width:760px){
+ #rp350Menu .rp350Sheet{max-width:680px;margin:2vh auto;padding:18px 14px 25px}
+ #rp350Menu .rp350Links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+ #rp350Menu .rp350Links .rp350Tile{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:9px;min-width:0;min-height:170px;padding:18px 15px;background:#12313a;border:1px solid #52777b;border-radius:24px;text-align:left;color:#f5fbf8;box-shadow:none;line-height:1.25}
+ #rp350Menu .rp350TileIcon{font-size:32px;line-height:1.25}
+ #rp350Menu .rp350Tile strong{font-size:clamp(18px,4.7vw,25px);font-weight:800;overflow-wrap:anywhere}
+ #rp350Menu .rp350Tile small{font-size:clamp(13px,3.6vw,17px);font-weight:500;color:#b8d4d0;line-height:1.35;overflow-wrap:anywhere}
+ #rp350Menu .rp350Tile:focus-visible{outline:3px solid #b2f4e2;outline-offset:2px}
+ #rp350Menu .rp350Close{min-height:44px}
+}
+</style>
 <script id="rp350Nav">
 (function(){
  const tabs=[['overview','🏠','Start'],['calendar','💪','Training'],['steps','👟','Schritte'],['water','💧','Wasser']];
@@ -1664,7 +1690,33 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
   menu.querySelector('.rp350Close').addEventListener('click',()=>menu.hidden=true);menu.addEventListener('click',e=>{if(e.target===menu)menu.hidden=true});
   document.addEventListener('keydown',e=>{if(e.key==='Escape')menu.hidden=true});
   const names={overview:'🏠 Startseite',calendar:'💪 Trainingsplan',steps:'👟 Schritte & Kilometer',water:'💧 Wassertracker',analytics:'📊 Statistiken',realcalendar:'🗓️ Kalender',rewards:'🎁 Belohnungen',goals:'🎯 Ziele',holidays:'🏖️ Ferien',videos:'🎬 Videos',profile:'👤 Profil',yearreview:'📅 Jahresrückblick'};
-  function fillMenu(){const box=menu.querySelector('.rp350Links');box.replaceChildren();document.querySelectorAll('.tabnav button[data-tab]').forEach(btn=>{const tab=btn.dataset.tab;const b=document.createElement('button');b.type='button';b.textContent=names[tab]||btn.textContent.trim();b.addEventListener('click',()=>go(tab));box.append(b)})}
+  function fillMenu(){
+   const box=menu.querySelector('.rp350Links');box.replaceChildren();
+   const sections=[
+    ['analytics','📊','Statistiken','Dein Fortschritt'],
+    ['achievements','🏆','Erfolge','Deine Abzeichen'],
+    ['goals','🎯','Ziele','Eigene Vorhaben'],
+    ['realcalendar','🗓️','Kalender','Alle Termine'],
+    ['rewards','🎁','Belohnungen','Deine Belohnungen'],
+    ['holidays','🏖️','Ferien','Freie Tage'],
+    ['settings','⚙️','Einstellungen','Design und Daten']
+   ];
+   for(const [tab,emoji,title,description] of sections){
+    const b=document.createElement('button');b.type='button';b.className='rp350Tile';
+    const ic=document.createElement('span');ic.className='rp350TileIcon';ic.textContent=emoji;
+    const heading=document.createElement('strong');heading.textContent=title;
+    const sub=document.createElement('small');sub.textContent=description;
+    b.append(ic,heading,sub);
+    b.addEventListener('click',()=>{
+      if(tab==='settings'){
+       const gear=document.getElementById('settingsGear');
+       if(gear){menu.hidden=true;gear.click();return;}
+      }
+      go(tab);
+    });
+    box.append(b);
+   }
+  }
   function update(){const active=document.querySelector('.tabnav button.active')?.dataset.tab||'overview';dock.querySelectorAll('button[data-rp350]').forEach(b=>{if(b.dataset.rp350===active)b.setAttribute('aria-current','page');else b.removeAttribute('aria-current')})}
   document.addEventListener('click',e=>{if(e.target.closest('.tabnav button,[data-rp310-tab]'))setTimeout(update,60)});update();
  }
@@ -1719,4 +1771,46 @@ $('rp37File')?.addEventListener('change',async ev=>{
  finally{ev.target.value='';}
 });
 })();
-</script></body></html>
+</script>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"><script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<style>
+#rpGPSOpen{position:fixed;right:14px;bottom:18px;z-index:8000;background:#7af0c5;color:#06251d;border:2px solid #153f37;box-shadow:0 5px 20px #0008;border-radius:18px;padding:12px 17px;font-weight:900}
+#rpGPSOverlay{display:none;position:fixed;inset:0;z-index:8500;background:#071a20;color:#f3fbf8;overflow-y:auto;padding:15px;font-family:system-ui,sans-serif}
+#rpGPSOverlay.rp-show{display:block}#rpGPSOverlay .rp-wrap{max-width:900px;margin:auto}#rpGPSOverlay button,#rpGPSOverlay select{padding:10px;border-radius:10px;border:1px solid #60877c;background:#1e4249;color:white;font:inherit}#rpGPSOverlay button.rp-main{background:#7af0c5;color:#08231b;font-weight:bold}#rpGPSOverlay button:disabled{opacity:.4}#rpGPSMap{height:min(52vh,460px);min-height:260px;border-radius:15px;background:#1e4249;margin:12px 0}#rpGPSOverlay .rp-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:12px 0}#rpGPSOverlay .rp-stats>div{background:#16343b;border-radius:12px;padding:12px;text-align:center}#rpGPSOverlay .rp-stats b{display:block;font-size:1.35rem}#rpGPSOverlay .rp-row{display:flex;flex-wrap:wrap;gap:9px;align-items:center;margin:12px 0}#rpGPSOverlay .rp-route{padding:12px;border:1px solid #476b68;border-radius:12px;margin:8px 0}#rpGPSOverlay .rp-note{font-size:.86rem;color:#b8ceca}
+</style>
+<button id="rpGPSOpen" type="button">📍 GPS-Tracker</button>
+<section id="rpGPSOverlay" aria-label="GPS-Tracker"><div class="rp-wrap">
+<div class="rp-row" style="justify-content:space-between"><h2>📍 RoyalPulse GPS-Tracker</h2><button type="button" id="rpGPSClose">✕ Schließen</button></div>
+<label for="rpGPSMode">Aktivität:</label> <select id="rpGPSMode"><option value="Gehen">🚶 Gehen</option><option value="Laufen">🏃 Laufen</option><option value="Fahrrad">🚴 Fahrradfahren</option></select>
+<div class="rp-stats"><div><b id="rpGPSDistance">0,00</b><small>km</small></div><div><b id="rpGPSTime">00:00:00</b><small>Zeit</small></div><div><b id="rpGPSPoints">0</b><small>GPS-Punkte</small></div></div>
+<div class="rp-row"><button class="rp-main" id="rpGPSStart">▶ Starten</button><button id="rpGPSStop" disabled>■ Beenden</button><button id="rpGPSSave" disabled>💾 Strecke speichern</button><button id="rpGPSCenter">⌖ Zentrieren</button></div>
+<p id="rpGPSStatus" role="status">Bereit. Zum Starten Standortfreigabe erlauben.</p><div id="rpGPSMap"></div>
+<p class="rp-note">Die GPS-Aufzeichnung funktioniert nur mit HTTPS und deiner Standortfreigabe. Lass RoyalPulse während der Tour geöffnet; bei gesperrtem Bildschirm oder im Hintergrund kann iOS die Aufzeichnung unterbrechen. Kartenkacheln benötigen Internet. Deine Strecken bleiben lokal in diesem Browser und werden nicht an RoyalPulse-Server gesendet; für die Karte werden Kartendaten von OpenStreetMap geladen.</p>
+<h3>Gespeicherte Strecken</h3><div id="rpGPSHistory"></div>
+</div></section>
+<script>
+(()=>{'use strict';
+const $=id=>document.getElementById(id), key='rp-gps-routes-v1';
+let map,line,marker,watch=null,coords=[],distance=0,startAt=0,elapsed=0,timer=null,active=false,finished=false;
+const R=6371000, rad=v=>v*Math.PI/180;
+function meters(a,b){const dLat=rad(b[0]-a[0]),dLon=rad(b[1]-a[1]);const x=Math.sin(dLat/2)**2+Math.cos(rad(a[0]))*Math.cos(rad(b[0]))*Math.sin(dLon/2)**2;return 2*R*Math.atan2(Math.sqrt(x),Math.sqrt(1-x));}
+function time(ms){const sec=Math.floor(ms/1000);return [Math.floor(sec/3600),Math.floor(sec%3600/60),sec%60].map(x=>String(x).padStart(2,'0')).join(':');}
+function status(t){$('rpGPSStatus').textContent=t;}
+function update(){ $('rpGPSDistance').textContent=(distance/1000).toFixed(2).replace('.',',');$('rpGPSTime').textContent=time(active?Date.now()-startAt:elapsed);$('rpGPSPoints').textContent=coords.length; }
+function initialize(){if(map)return; if(!window.L){status('Karte konnte nicht geladen werden. Bitte Internetverbindung prüfen.');return;}map=L.map('rpGPSMap').setView([51,10],5);L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'© OpenStreetMap contributors'}).addTo(map);line=L.polyline([],{color:'#16b888',weight:5}).addTo(map);}
+function showPoints(points){initialize();if(!map)return;line.setLatLngs(points);if(marker){map.removeLayer(marker);marker=null;}if(points.length){marker=L.circleMarker(points[points.length-1],{radius:8,color:'#fff',fillColor:'#0aaf84',fillOpacity:1}).addTo(map);if(points.length>1)map.fitBounds(line.getBounds(),{padding:[30,30],maxZoom:17});else map.setView(points[0],16);}}
+function tick(){update();}
+function receive(p){if(!active)return;const c=p.coords;if(c.accuracy>100){status('GPS ungenau (±'+Math.round(c.accuracy)+' m). Warte auf besseres Signal.');return;}const next=[c.latitude,c.longitude];if(coords.length){const d=meters(coords[coords.length-1],next);if(d<3)return;if(d>Math.max(100,((Date.now()-(window.rpLastGPSTime||Date.now()))/1000)*35))return;distance+=d;}coords.push(next);window.rpLastGPSTime=Date.now();showPoints(coords);update();status('GPS aktiv · Genauigkeit ±'+Math.round(c.accuracy)+' m');}
+function stop(){if(watch!==null){navigator.geolocation.clearWatch(watch);watch=null;}active=false;elapsed=Date.now()-startAt;clearInterval(timer);timer=null;finished=coords.length>0;$('rpGPSStart').disabled=false;$('rpGPSStop').disabled=true;$('rpGPSSave').disabled=!finished;update();}
+$('rpGPSOpen').onclick=()=>{$('rpGPSOverlay').classList.add('rp-show');initialize();setTimeout(()=>map?.invalidateSize(),200);historyRender();};
+$('rpGPSClose').onclick=()=>{$('rpGPSOverlay').classList.remove('rp-show');};
+$('rpGPSStart').onclick=()=>{if(!navigator.geolocation){status('Dieser Browser unterstützt kein GPS.');return;}if(!window.isSecureContext){status('GPS benötigt HTTPS. Öffne RoyalPulse über GitHub Pages.');return;}if(active)return;coords=[];distance=0;elapsed=0;finished=false;window.rpLastGPSTime=null;startAt=Date.now();active=true;showPoints([]);update();$('rpGPSStart').disabled=true;$('rpGPSStop').disabled=false;$('rpGPSSave').disabled=true;status('Warte auf GPS-Signal …');timer=setInterval(tick,1000);watch=navigator.geolocation.watchPosition(receive,e=>{const errors={1:'Standortzugriff abgelehnt. Bitte in Safari erlauben.',2:'Standort derzeit nicht verfügbar.',3:'GPS-Zeitüberschreitung. Versuche es erneut.'};status(errors[e.code]||e.message);if(e.code===1)stop();},{enableHighAccuracy:true,maximumAge:1000,timeout:20000});};
+$('rpGPSStop').onclick=()=>{stop();status(finished?'Tour beendet. Jetzt kannst du speichern.':'Tour beendet, noch keine GPS-Punkte.');};
+$('rpGPSCenter').onclick=()=>{if(coords.length)showPoints(coords);else status('Starte GPS, um deinen Standort zu sehen.');};
+function routes(){try{return JSON.parse(localStorage.getItem(key)||'[]')}catch{return []}}
+$('rpGPSSave').onclick=()=>{if(!finished)return;const all=routes();all.unshift({id:Date.now(),date:new Date().toLocaleString('de-DE'),mode:$('rpGPSMode').value,km:distance/1000,ms:elapsed,points:coords});try{localStorage.setItem(key,JSON.stringify(all.slice(0,40)));status('Strecke auf diesem Gerät gespeichert.');$('rpGPSSave').disabled=true;finished=false;historyRender();}catch{status('Speicher voll. Lösche alte Strecken, um Platz zu schaffen.');}};
+function historyRender(){const el=$('rpGPSHistory');el.replaceChildren();const all=routes();if(!all.length){el.textContent='Noch keine gespeicherten Strecken.';return;}all.forEach(r=>{const row=document.createElement('div');row.className='rp-route';const txt=document.createElement('div');txt.textContent=`${r.mode} · ${r.date} · ${r.km.toFixed(2).replace('.',',')} km · ${time(r.ms)}`;const view=document.createElement('button');view.textContent='🗺️ Anzeigen';view.onclick=()=>{if(active){status('Beende zuerst die aktuelle Aufzeichnung.');return;}coords=r.points;distance=r.km*1000;elapsed=r.ms;finished=false;$('rpGPSSave').disabled=true;update();showPoints(coords);status('Gespeicherte Strecke angezeigt.');};const del=document.createElement('button');del.textContent='🗑️ Löschen';del.onclick=()=>{if(!confirm('Diese Strecke endgültig löschen?'))return;localStorage.setItem(key,JSON.stringify(routes().filter(x=>x.id!==r.id)));historyRender();};row.append(txt,view,document.createTextNode(' '),del);el.append(row);});}
+window.addEventListener('pagehide',()=>{if(active)stop();});
+})();
+</script>
+</body></html>
