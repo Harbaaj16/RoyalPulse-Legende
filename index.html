@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="manifest.webmanifest" rel="manifest"/><link href="icons/harbaaj-180.png" rel="apple-touch-icon"/><meta content="yes" name="apple-mobile-web-app-capable"/><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/><meta content="RoyalPulse" name="apple-mobile-web-app-title"/><meta content="#071a20" name="theme-color"/>
-<title>RoyalPulse 4.6</title>
+<title>RoyalPulse 4.7</title>
 <style>
 :root{--bg:#071a20;--panel:#102a31;--panel2:#15363e;--line:#2b5057;--mint:#7af0c5;--white:#f3fbf8;--muted:#b8ceca;--yellow:#ffe09a;--red:#ffb9b9}
 *{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top right,#12363a 0%,var(--bg) 48%);color:var(--white);font:16px/1.5 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
@@ -660,7 +660,7 @@ document.addEventListener('visibilitychange',()=>{if(document.visibilityState===
 <section class="panel notice"><h2>🛡️ Sicher trainieren</h2><p class="tip">Der Tracker ist eine persönliche Zusammenstellung, kein offizieller Plan von Oliver Sjöström. Du bist noch im Wachstum: Ziel sind Fitness, Kraft und gute Gewohnheiten – keine Crash-Diät. Besprich den Plan mit einem Elternteil/Erziehungsberechtigten. Pausiere bei Schmerzen, Schwindel oder Übelkeit. Passe intensive Videos an und mache Pausen.</p></section>
 </div></div>
 </main>
-<footer>Trainingsvideos lassen sich im Trainingsplan abspielen; beim Start wird eine Verbindung zu YouTube hergestellt. Videos können extern gesperrt sein oder sich ändern. Häkchen bleiben lokal in diesem Browser; andere Personen mit Zugriff auf dein Gerät könnten sie sehen. Sicherung exportieren, wenn du deinen Fortschritt behalten möchtest. <br/><a href="https://www.youtube.com/@oliversjostrom" rel="noopener" target="_blank">Oliver Sjöström – YouTube-Kanal</a><div aria-label="Aktuelle App-Version" class="legend-footer-version" id="royalCurrentVersionFooter">Aktuelle Version: 4.6</div><div id="rp46FooterVersion">👑 RoyalPulse · Version 4.6</div></footer>
+<footer>Trainingsvideos lassen sich im Trainingsplan abspielen; beim Start wird eine Verbindung zu YouTube hergestellt. Videos können extern gesperrt sein oder sich ändern. Häkchen bleiben lokal in diesem Browser; andere Personen mit Zugriff auf dein Gerät könnten sie sehen. Sicherung exportieren, wenn du deinen Fortschritt behalten möchtest. <br/><a href="https://www.youtube.com/@oliversjostrom" rel="noopener" target="_blank">Oliver Sjöström – YouTube-Kanal</a><div aria-label="Aktuelle App-Version" class="legend-footer-version" id="royalCurrentVersionFooter">Aktuelle Version: 4.7</div><div id="rp46FooterVersion">👑 RoyalPulse · Version 4.7</div></footer>
 <script>
 const vids={
  chest:["Brust, Schultern & Bauch – 30 Min","https://www.youtube.com/watch?v=Sv_2w3v1N_k"],
@@ -718,11 +718,18 @@ function renderWeeks(){weeksEl.innerHTML="";for(let w=1;w<=53;w++){let b=documen
 // Direkte Videos statt Suchergebnisse: Auswahl rotiert je Woche.
 // Die Videotitel sind bewusst neutral, da die Verfügbarkeit extern bestimmt wird.
 const royalPlayerVideos=[
- {id:'Sv_2w3v1N_k',title:'Workout-Video A'},
- {id:'onY-vv46tpU',title:'Workout-Video B'},
- {id:'zbqjV99LZr8',title:'Workout-Video C'}
+ {id:'8P7JJffYKKY',title:'20 Min · Standing HIIT · Ganzkörper'},
+ {id:'jAdIOnxh4JM',title:'20 Min · HIIT · Ganzkörper'},
+ {id:'zJKtwow2oBc',title:'20 Min · Ganzkörper · HIIT'},
+ {id:'oYsjWbQmWYI',title:'30 Min · Cardio · Ganzkörper'},
+ {id:'_5pMne6bPUw',title:'20 Min · Standing HIIT'},
+ {id:'Sv_2w3v1N_k',title:'Brust, Schultern & Bauch'},
+ {id:'onY-vv46tpU',title:'Cardio HIIT'},
+ {id:'zbqjV99LZr8',title:'Cardio ohne Springen'}
 ];
-function royalPlayerVideo(n){return royalPlayerVideos[(Math.floor((n-1)/7)+(n-1)%7)%royalPlayerVideos.length]}
+// Acht verschiedene Oliver-Videos, danach beginnt die Rotation erneut.
+// Sonntage sind Ruhetage und zählen nicht zur Video-Rotation.
+function royalPlayerVideo(n){const workoutIndex=(n-1)-Math.floor((n-1)/7);return royalPlayerVideos[workoutIndex%royalPlayerVideos.length]}
 // YouTube error 153: embedded playback cannot be guaranteed by an external site.
 // Open the video on YouTube instead of creating an iframe that fails.
 function royalStartVideo(button){
@@ -739,7 +746,7 @@ function renderDays(){
   let player='';
   if(!rest){
    const v=royalPlayerVideo(n);
-   player=`<div class="royal-inline-player" style="margin:15px 0;padding:14px;border:1px solid var(--line);border-radius:16px;background:var(--panel2)"><strong>🎥 ${v.title} · Woche ${d.week}</strong><p class="tip">YouTube verhindert manchmal die Wiedergabe innerhalb anderer Websites (Fehler 153). Öffne das Workout daher direkt auf YouTube. Dein Trainingsfortschritt bleibt hier gespeichert.</p><button type="button" class="primary royal-play-button" data-video-id="${v.id}" style="width:100%;margin:10px 0">▶ Workout auf YouTube starten</button><a class="video" href="https://www.youtube.com/watch?v=${v.id}" target="_blank" rel="noopener noreferrer">↗ Auf YouTube öffnen</a></div>`;
+   player=`<div class="royal-inline-player" style="margin:15px 0;padding:14px;border:1px solid var(--line);border-radius:16px;background:var(--panel2)"><strong>🎥 ${v.title} · Woche ${d.week}</strong><p class="tip">Die Videos stammen von Oliver Sjöström. Acht verschiedene Videos wechseln sich ab; danach beginnt die Auswahl wieder von vorn. Öffne das Workout direkt auf YouTube. Pausen und leichtere Varianten sind jederzeit okay.</p><button type="button" class="primary royal-play-button" data-video-id="${v.id}" style="width:100%;margin:10px 0">▶ Workout auf YouTube starten</button><a class="video" href="https://www.youtube.com/watch?v=${v.id}" target="_blank" rel="noopener noreferrer">↗ Auf YouTube öffnen</a></div>`;
   }else{player='<p class="tip">🌿 Ruhetag – kein Workout erforderlich.</p>'}
   el.innerHTML=`<div class="daytop"><div class="number">${done?'✓':String(n).padStart(2,'0')}</div><div><div class="tag">${d.type} · WOCHE ${d.week}</div><h3>TAG ${n}: ${d.name}</h3><div class="sub">${d.time}</div></div></div><p>${d.desc}</p>${player}<label class="task"><input type="checkbox" ${done?'checked':''} aria-label="Tag ${n} erledigt"><span><strong>${d.task}</strong><small>Einmal antippen, wenn fertig.</small></span></label><button class="finish">${done?'✓ ERLEDIGT – zum Rückgängigmachen tippen':'☐ TAG ABHAKEN'}</button>`;
   el.querySelector('input').onchange=()=>toggle(n);
@@ -1143,7 +1150,7 @@ file?.addEventListener('change',async()=>{
 </script><script>
 (function(){
 'use strict';
-const APP_VERSION='4.6';
+const APP_VERSION='4.7';
 const $=id=>document.getElementById(id);
 const status=$('legendUpdateStatus');
 const button=$('legendApplyUpdate');
@@ -2026,7 +2033,7 @@ function sync(){let n=Number((val?.textContent||'1').match(/\d+/)?.[0]||1);docum
 sync();const observer=new MutationObserver(sync);if(val)observer.observe(val,{subtree:true,childList:true,characterData:true});if(progress)observer.observe(progress,{attributes:true,attributeFilter:['style']});
 }if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
 })();</script><script id="royalpulse-footer-current-version">
-(function(){function update(){const el=document.getElementById('royalCurrentVersionFooter');if(!el)return;const version=(typeof APP_VERSION!=='undefined'?APP_VERSION:'4.6');el.textContent='👑 RoyalPulse · Aktuelle Version '+version;}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',update);else update();})();
+(function(){function update(){const el=document.getElementById('royalCurrentVersionFooter');if(!el)return;const version=(typeof APP_VERSION!=='undefined'?APP_VERSION:'4.7');el.textContent='👑 RoyalPulse · Aktuelle Version '+version;}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',update);else update();})();
 </script>
 
 </body></html>
